@@ -1,0 +1,14 @@
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\bin\Debug\STF_SQLExportToolsToPlanner.exe.config
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\bin\Debug\STF_SQLExportToolsToPlanner.exe
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\bin\Debug\STF_SQLExportToolsToPlanner.pdb
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.csprojAssemblyReference.cache
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.csproj.CoreCompileInputs.cache
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.exe
+C:\Users\digital\Documents\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.pdb
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\bin\Debug\STF_SQLExportToolsToPlanner.exe.config
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\bin\Debug\STF_SQLExportToolsToPlanner.exe
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\bin\Debug\STF_SQLExportToolsToPlanner.pdb
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.csprojAssemblyReference.cache
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.csproj.CoreCompileInputs.cache
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.exe
+C:\Users\empir\source\repos\STF_SQLExportToolsToPlanner\STF_SQLExportToolsToPlanner\obj\Debug\STF_SQLExportToolsToPlanner.pdb
