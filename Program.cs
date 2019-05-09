@@ -33,12 +33,16 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter skillPerJobList = new StreamWriter(@"skill_per_job_list.csv");
-            skillPerJobList.WriteLine("Rank:1-Name:1-Num:2-Name:2-Num:3-Name:3-Num:4-Name:4-Num:5-Name:5-Num:6-Name:6-Num:7-Name:7-Num:8-Name:8-Num:9-Name:9-Num:10-Name:10-Num:11-Name:11-Num:12-Name:12-Num:13-Name:13-Num:14-Name:14-Num:15-Name:15-Num:16-Name:16-Num:17-Name:17-Num:Job");
+            skillPerJobList.WriteLine("Job Type:Rank:Pistols:Rifles:Blades:Evasion:Tactics:Stealth:Gunnery:Pilot:Ship Ops:Repair:Electronics:Navigation:Doctor:Command:Negotiate:Intimidate:Explore:Job");
 
             //iterate over filtered collection of rows, output text
-            foreach (var skillPerJob in db.Load<Job>("SELECT jobLevel, skLightFirearms, skHeavyFirearms, skMelee, skEvasion, skTactics, skStealth, skGunnery, skPilot, skShipOps, skRepair, skElectronics, skNavigation, skDoctor, skCommand, skNegotiate, skIntimidate, skExplorer, jobName FROM Job;"))
+            foreach (var skillPerJob in db.Load<Job>("SELECT jobType, jobLevel, skLightFirearms, skHeavyFirearms, skMelee, skEvasion, skTactics, " +
+                "skStealth, skGunnery, skPilot, skShipOps, skRepair, skElectronics, skNavigation, skDoctor, skCommand, skNegotiate, skIntimidate, skExplorer, jobName FROM Job ORDER BY jobType;"))
             {
-                skillPerJobList.WriteLine("{0}:Pistols:{1}:Rifles:{2}:Blades:{3}:Evasion:{4}:Tactics:{5}:Stealth:{6}:Gunnery:{7}:Pilot:{8}:Ship Ops:{9}:Repair:{10}:Electronics:{11}:Navigation:{12}:Doctor:{13}:Command:{14}:Negotiate:{15}:Intimidate:{16}:Explore:{17}:Job:{18}", skillPerJob.jobLevel, skillPerJob.skLightFirearms, skillPerJob.skHeavyFirearms, skillPerJob.skMelee, skillPerJob.skEvasion, skillPerJob.skTactics, skillPerJob.skStealth, skillPerJob.skGunnery, skillPerJob.skPilot, skillPerJob.skShipOps, skillPerJob.skRepair, skillPerJob.skElectronics, skillPerJob.skNavigation, skillPerJob.skDoctor, skillPerJob.skCommand, skillPerJob.skNegotiate, skillPerJob.skIntimidate, skillPerJob.skExplorer, skillPerJob.jobName);
+                skillPerJobList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}",
+                    skillPerJob.jobType, skillPerJob.jobLevel, skillPerJob.skLightFirearms, skillPerJob.skHeavyFirearms, skillPerJob.skMelee, skillPerJob.skEvasion,
+                    skillPerJob.skTactics, skillPerJob.skStealth, skillPerJob.skGunnery, skillPerJob.skPilot, skillPerJob.skShipOps, skillPerJob.skRepair, skillPerJob.skElectronics,
+                    skillPerJob.skNavigation, skillPerJob.skDoctor, skillPerJob.skCommand, skillPerJob.skNegotiate, skillPerJob.skIntimidate, skillPerJob.skExplorer, skillPerJob.jobName);
             }
             skillPerJobList.Close();
         }
@@ -50,7 +54,7 @@ namespace STF_SQLExportToolsToPlanner
             jobList.WriteLine("Job:Starter");
 
             // iterate over filtered collection of rows, output text
-            foreach (var job in db.Load<Job>("SELECT * FROM JOB WHERE jobLevel = 1;"))
+            foreach (var job in db.Load<Job>("SELECT * FROM JOB WHERE jobLevel = 1 ORDER BY jobType;"))
             {
                 jobList.WriteLine("{0}:{1}", job.jobName, getIsStarter(job.jobType));
             }

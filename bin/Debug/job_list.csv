@@ -1,7 +1,6 @@
 Job:Starter
 Crew Dog:YES
 Mechanic:YES
-Hyperwarp Navigator:NO
 Electronics Tech:YES
 Gunner:YES
 Soldier:YES
@@ -13,6 +12,8 @@ Combat Medic:YES
 Doctor:YES
 Diplomat:YES
 Zealot:NO
+Hyperwarp Navigator:NO
+Wing Tech:NO
 Exo-Scout:NO
 Scavenger:NO
 Xeno Hunter:NO
@@ -30,4 +31,3 @@ Engineer:NO
 Quartermaster:NO
 Wing Bomber:NO
 Wing Leader:NO
-Wing Tech:NO
