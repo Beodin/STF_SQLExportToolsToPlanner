@@ -23,10 +23,28 @@ namespace STF_SQLExportToolsToPlanner
 
                 MakeFIle_JobList(db);
                 //MakeFIle_StfEngineData(db);
-                //MakeFile_ShipComponents(db);
+                MakeFile_ShipComponents(db);
                 MakeFile_SkillPerJobList(db);
 
             }
+        }
+
+        private static void MakeFile_ShipComponents(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter shipComp = new StreamWriter(@"ship components.csv");
+            shipComp.WriteLine("Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo:Max Crew:Max Officer:Jump Cost:Armor:Fuel Bonus:Guest:Prison:Max Crafts:Medical");
+
+            //iterate over filtered collection of rows, output text
+            foreach (var shipComponent in db.Load<ShipComponent>("SELECT componentName, componentType, componentSize, mass, skPilot, skShipOps, skGunnery, skElectronics, skNavigation, skExplorer, holdsCargo, holdsCrew, holdsOfficer, jumpCost, armorBonus, fuelBonus, holdsGuest, holdsPrisoner, holdsCraft, medicalRating FROM ShipComponent WHERE componentType > -1 ORDER BY componentType;"))
+            {
+                shipComp.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}", 
+                    shipComponent.componentName, shipComponent.componentType, shipComponent.componentSize, shipComponent.mass, 
+                    shipComponent.skPilot, shipComponent.skShipOps, shipComponent.skGunnery, shipComponent.skElectronics, shipComponent.skNavigation, 
+                    shipComponent.skExplorer, shipComponent.holdsCargo, shipComponent.holdsCrew, shipComponent.holdsOfficer, shipComponent.jumpCost, 
+                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner, shipComponent.holdsCraft, shipComponent.medicalRating);
+            }
+            shipComp.Close();
         }
 
         private static void MakeFile_SkillPerJobList(SqlNado.SQLiteDatabase db)
@@ -118,6 +136,33 @@ namespace STF_SQLExportToolsToPlanner
         public int skNegotiate { get; set; }
         public int skIntimidate { get; set; }
         public int skExplorer { get; set; }
+    }
+
+    public class ShipComponent
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string componentName { get; set; }
+        public int componentType { get; set; }
+        public int componentSize { get; set; }
+        public int mass { get; set; }
+        public int skPilot { get; set; }
+        public int skShipOps { get; set; }
+        public int skGunnery { get; set; }
+        public int skElectronics { get; set; }
+        public int skNavigation { get; set; }
+        public int skExplorer { get; set; }
+        public int holdsCargo { get; set; }
+        public int holdsCrew { get; set; }
+        public int holdsOfficer { get; set; }
+        public int jumpCost { get; set; }
+        public int armorBonus { get; set; }
+        public int fuelBonus { get; set; }
+        public int holdsGuest { get; set; }
+        public int holdsPrisoner { get; set; }
+        public int holdsCraft { get; set; }
+        public int medicalRating { get; set; }
+
     }
 
 }
