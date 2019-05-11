@@ -20,13 +20,83 @@ namespace STF_SQLExportToolsToPlanner
 
             using (var db = new SQLiteDatabase(path))
             {
-
-                MakeFIle_JobList(db);
-                //MakeFIle_StfEngineData(db);
+                MakeFile_TalentPoints(db); //Not sure what I'll need for this one. Also not sure if I can use query to see where value increases.
+                MakeFile_JobList(db);
+                MakeFile_StfEngineData(db);
                 MakeFile_ShipComponents(db);
                 MakeFile_SkillPerJobList(db);
+                MakeFile_TalentList(db);
+                MakeFile_ShipWeaponData(db);
+            }
+        }
+
+        public static string AddQuotes(string str)
+        {
+            return string.Format("\"{0}\"", str);
+        }
+
+        private static void MakeFile_TalentPoints(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter talentPoints = new StreamWriter(@"talent_points.csv");
+            talentPoints.WriteLine("Rank:Talents:LevelType");
+
+          //foreach ()
+            {
 
             }
+
+            talentPoints.Close();
+        }
+
+        private static void MakeFile_ShipWeaponData(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter shipWeaponList = new StreamWriter(@"stf_weapon_data.csv");
+            shipWeaponList.WriteLine("Name:Type:Damage:Radiation:Void:Range:AP:Accuracy:Critical Chance:Cripple Chance:Level");
+
+            //iterate over filtered collection of rows, output text
+            foreach(var shipWeap in db.Load<ShipWeapon>("SELECT * FROM ShipWeapon WHERE weaponName NOT LIKE 'X%' AND weaponName NOT LIKE 'NON%'; "))
+            {
+                shipWeaponList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}",
+                    shipWeap.weaponName, shipWeap.weaponType, shipWeap.damage, shipWeap.radDamage, 
+                    shipWeap.voidDamage, shipWeap.range, shipWeap.ap, shipWeap.accuracy, 
+                    shipWeap.critChance, shipWeap.effectChance, shipWeap.level);
+            }
+            shipWeaponList.Close();
+        }
+
+        private static void MakeFile_TalentList(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter talentList = new StreamWriter(@"stf_talent_job.csv");
+            talentList.WriteLine("Name:Rank:Description:Cooldown:Job:Type");
+
+            //iterate over filtered collection of rows, output text
+            foreach(var talent in db.Load<Talent>("SELECT * FROM Talent WHERE actionType > -1;"))
+            {
+                talentList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}",
+                    talent.talentName, talent.jobLevel, talent.talentName2, talent.cooldown, 
+                    talent.jobType, talent.skillType);
+            }
+            talentList.Close();
+        }
+
+        private static void MakeFile_StfEngineData(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter shipEngine = new StreamWriter(@"stf_engine_data.csv");
+            shipEngine.WriteLine("Name:Mass:Speed:Agility:Fuel Cost:Combat Cost:Safety:Range Cost");
+
+            //iterate over filtered collection of rows, output text
+            //uses NOT LIKE 'X%' to limit to player components
+            foreach (var engine in db.Load<ShipEngine>("SELECT * FROM ShipEngine WHERE name NOT LIKE 'X%';"))
+            {
+                shipEngine.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}", 
+                    engine.name, engine.designMass, engine.shipSpeed, engine.shipAgile, 
+                    engine.mapFuelCost, engine.combatFuelCost, engine.safetyRating, engine.moveCost);
+            }
+            shipEngine.Close();
         }
 
         private static void MakeFile_ShipComponents(SqlNado.SQLiteDatabase db)
@@ -36,10 +106,12 @@ namespace STF_SQLExportToolsToPlanner
             shipComp.WriteLine("Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo:Max Crew:Max Officer:Jump Cost:Armor:Fuel Bonus:Guest:Prison:Max Crafts:Medical");
 
             //iterate over filtered collection of rows, output text
-            foreach (var shipComponent in db.Load<ShipComponent>("SELECT componentName, componentType, componentSize, mass, skPilot, skShipOps, skGunnery, skElectronics, skNavigation, skExplorer, holdsCargo, holdsCrew, holdsOfficer, jumpCost, armorBonus, fuelBonus, holdsGuest, holdsPrisoner, holdsCraft, medicalRating FROM ShipComponent WHERE componentType > -1 ORDER BY componentType;"))
+            //uses WHERE componentType > -1 to limit to player components
+            foreach (var shipComponent in db.Load<ShipComponent>("SELECT componentName, componentType, componentSize, mass, skPilot, skShipOps, skGunnery, skElectronics, skNavigation, skExplorer, holdsCargo, " +
+                "holdsCrew, holdsOfficer, jumpCost, armorBonus, fuelBonus, holdsGuest, holdsPrisoner, holdsCraft, medicalRating FROM ShipComponent WHERE componentType > -1 ORDER BY componentType;"))
             {
                 shipComp.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}", 
-                    shipComponent.componentName, shipComponent.componentType, shipComponent.componentSize, shipComponent.mass, 
+                    AddQuotes(shipComponent.componentName), shipComponent.componentType, shipComponent.componentSize, shipComponent.mass, 
                     shipComponent.skPilot, shipComponent.skShipOps, shipComponent.skGunnery, shipComponent.skElectronics, shipComponent.skNavigation, 
                     shipComponent.skExplorer, shipComponent.holdsCargo, shipComponent.holdsCrew, shipComponent.holdsOfficer, shipComponent.jumpCost, 
                     shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner, shipComponent.holdsCraft, shipComponent.medicalRating);
@@ -65,7 +137,7 @@ namespace STF_SQLExportToolsToPlanner
             skillPerJobList.Close();
         }
 
-        private static void MakeFIle_JobList(SqlNado.SQLiteDatabase db)
+        private static void MakeFile_JobList(SqlNado.SQLiteDatabase db)
         {
             // output the header
             StreamWriter jobList = new StreamWriter(@"job_list.csv");
@@ -165,4 +237,46 @@ namespace STF_SQLExportToolsToPlanner
 
     }
 
+    public class ShipEngine
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string name { get; set; }
+        public int designMass { get; set; }
+        public int shipSpeed { get; set; }
+        public int shipAgile { get; set; }
+        public int mapFuelCost { get; set; }
+        public int combatFuelCost { get; set; }
+        public int safetyRating { get; set; }
+        public int moveCost { get; set; }
+    }
+    
+    public class Talent
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string talentName { get; set; }
+        public int jobLevel { get; set; }
+        public int jobType { get; set; }
+        public string talentName2 { get; set; }
+        public int cooldown { get; set; }
+        public string skillType { get; set; }
+    }
+
+    public class ShipWeapon
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string weaponName { get; set; }
+        public int weaponType { get; set; }
+        public int damage { get; set; }
+        public int radDamage { get; set; }
+        public int voidDamage { get; set; }
+        public int range { get; set; }
+        public int ap { get; set; }
+        public int accuracy { get; set; }
+        public int critChance { get; set; }
+        public int effectChance { get; set; }
+        public int level { get; set; }
+    }
 }
