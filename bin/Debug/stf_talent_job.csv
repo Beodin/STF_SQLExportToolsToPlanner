@@ -1,278 +1,448 @@
 Name:Rank:Description:Cooldown:Job:Type
-Aura of Command:1::30:23:SKILLS_COMMAND
-Discerning Glance:1:When Recruiting, new crew member gains improved Attributes and you discover one of their hidden Traits.:30:23:SKILLS_COMMAND
-Loyalty Rousing:1:In the aftermath of a ship battle, give an inspiring speech which causes up to 10 crew gain 10 + Command Skill in Morale:60:23:SKILLS_COMMAND
-Quell Mutiny:5:Powerful words from a strong leader pull the crew together. The mutiny ends and Morale of the entire crew is increased by 10 + Command skill:260:23:SKILLS_COMMAND
-Shrewd Dealings:8:When accepting a Mission, gain a (Charisma + Command %) chance to discover one of your Contact's hidden Traits:180:23:SKILLS_COMMAND
-Expert Maneuver:1:Prevent Pilot Failures.:30:24:SKILLS_PILOT
-Sure Landfall:1:Lands efficiently on a world, reduces operation time to 1 Turn and Fuel Cost to 1:30:24:SKILLS_PILOT
-Swift Route:5:Precision planning and twitch reflexes in Hyperwarp Jump reduces fuel cost by 2 + Navigation Skill:30:24:SKILLS_NAVIGATION
-Swift Sweep:8:When Spying in the orbit of a system, remove a risk card:30:24:SKILLS_PILOT
-Wise Counsel:1:Prevent Negotiate Failures.:30:26:SKILLS_NEGOTIATE
-Known Trader:1:Discounts price for trading Permit by 10% + Negotiate Skill. Contact spends Charisma % less Reputation:30:26:SKILLS_NEGOTIATE
-Market Confidant:1:When executing a trade at the Exchange worth over $5,000, you have a 10% + Charisma chance of gaining an introduction to a Contact from the local Faction:90:26:SKILLS_NEGOTIATE
-Friendly Banter:1:When on spice leave in the hall, you have a Charisma % chance to learn about a Contact from the idle banter in the Hall:130:26:SKILLS_NEGOTIATE
-Garner Favor:5:When executing a trade at the Exchange worth over $5,000, gain Reputation up to your Negotiate Skill with the local Faction:90:26:SKILLS_NEGOTIATE
-Cordial Invitation:5:Receive up to your Negotiate Skill in Reputation bonus with a new Contact when buying an Introduction:30:26:SKILLS_NEGOTIATE
-Generosity:5:When paying your crew, increase Morale bonus for those paid. Any Morale penalty for any unpaid crew is reduced:30:26:SKILLS_NEGOTIATE
-Jettison Cargo:5:Dumping one randomized type of our ship's cargo into space buys time to escape a Pirate before Ship Combat starts:30:26:SKILLS_NEGOTIATE
-Righteous Profits:8:When executing a trade at the Exchange worth over $5,000, barters to increase your profit of sale or reduce price of purchase by 10% + Negotiate Skill:90:26:SKILLS_NEGOTIATE
-Trader's Reciprocity:8:When executing a trade at the Exchange worth over $5,000, gain Reputation equal to your Trade Permit Rank with all known Contacts in the zone of the trade:90:26:SKILLS_NEGOTIATE
-Bold Statement:11:Trading into a Trade Ban or War grants Rep bonus with second Faction up to the Rep penalty with the offended Faction:90:26:SKILLS_NEGOTIATE
-Lucrative Wholesale:11:When executing a trade at the Exchange worth over $50,000, generates Intel Records up to Negotiate Skill from market insight:90:26:SKILLS_NEGOTIATE
-Cunning Slip:1:Prevent Stealth Failures.:30:27:SKILLS_STEALTH
-Underground Whispers:1:When accessing a Black Market, replace a risk card with a Learn Rumor card:30:27:SKILLS_NEGOTIATE
-Hideout:1:Prevents seizure of packages, prisoners or passengers when searched by an enemy vessel:30:27:SKILLS_NEGOTIATE
-Backroom Deal:1:When attempting to access a Black Market, replace a risk card with a Market Access card:30:27:SKILLS_NEGOTIATE
-Insider Trading:8:When executing a trade at the Black Market worth over $5,000, gain Reputation up to your Negotiate Skill with your Contact:90:27:SKILLS_NEGOTIATE
-Bootleg Profits:5:When executing a trade at the Black Market worth over $5,000, increase your profit of sale or reduce price of purchase by 20% + Negotiate Skill:90:27:SKILLS_NEGOTIATE
-Forged Permit:5:Well-forged documents can open doors; can be used to reduce the hostility of military ships encountered in travel:30:27:SKILLS_NEGOTIATE
-Garbled Identity:5:Masks ship's signal to prevent identification. When ending a ship encounter in a draw, reduce possible Reputation damage by up to Stealth Skill:30:27:SKILLS_STEALTH
-Underworld Renown:8:When attempting to access a Black Market, replace a risk card with a Market Access card that includes Contact Influence bonus:30:27:SKILLS_NEGOTIATE
-Illicit Notoriety:1:When accessing a Black Market, always gain access at one Access Level higher:30:27:SKILLS_NEGOTIATE
-Criminal Connections:11:When executing a trade at the Black Market worth over $5,000, gain a 30% + Charisma chance to learn about a Contact:90:27:SKILLS_NEGOTIATE
-Unlawful Royalty:11:When executing a trade at the Black Market worth over $50,000, gain a 50% + Charisma chance to learn about a Smuggler or Smuggler Prince Contact:90:27:SKILLS_NEGOTIATE
-Icy Stare:1:Prevent Intimidate Failures.:30:28:SKILLS_INTIMIDATE
-Rigorous Search:1:A pirate's keen sense for treasure sniffs out secret hideaways from defeated Smugglers; new lootable cargo is added:30:28:SKILLS_INTIMIDATE
-Corsair's Eye:1:During a Blockade of a system, replace a risk card with a Merchant card:30:28:SKILLS_INTIMIDATE
-Unlawful Loot:1:When attempting to access a Black Market, reroll a risk card:30:28:SKILLS_PILOT
-Infamous Presence:5:During Blockade of a system, increase rewards by 10% + Intimidate Skill:60:28:SKILLS_INTIMIDATE
-Terrifying Extortion:5:Frighten non-violent merchants into turning over their cargo in return for a promise of being unharmed at cost of Reputation loss:90:28:SKILLS_INTIMIDATE
-Menacing Demeanor:8:When completing steps in a Mission using Intimidate Skill, your status as a known scoundrel mitigates your Reputation loss by up to Intimidate Skill:180:28:SKILLS_INTIMIDATE
-Lethal Example:8:Outright killing the lowest Morale mutineer sets a cruel example and reminds the crew who is in charge. The mutiny ends and Morale of the entire crew is increased by 20 + Intimidate Skill:260:28:SKILLS_INTIMIDATE
-Unwavering Attention:1:Prevent Navigation Failures.:30:29:SKILLS_INTIMIDATE
-Abiding Death:1:Price for death warrant Edict is discounted by 10% + Intimidate Skill:30:29:SKILLS_INTIMIDATE
-Expert Planning:1:Prevent Tactics Failures.:30:30:SKILLS_TACTICS
-Power Play:1:When completing steps in a Mission, increase Faction Reputation bonuses by Charisma %:90:30:SKILLS_COMMAND
-Militant Patrol:1:When Patrolling a system, increase rewards by 10% + Command Skill:60:30:SKILLS_COMMAND
-Stiff Salute:1:When encountering a hostile Military Officer or Zealot Captain, a respectful military salute automatically ends the encounter with a Draw; Reputation penalties may still apply:90:30:SKILLS_COMMAND
-Deserving Rank:5:Price for military Rank is discounted by 10% + Command Skill:30:30:SKILLS_COMMAND
-Commanding Sweep:5:When Patrolling a system, replace a card with a Reputation bonus or a Conflict Influence in the case of a Conflict:30:30:SKILLS_COMMAND
-Recruiter's Eye:5:When Recruiting, new crew member gains improved Attributes and you discover one of their hidden Traits.:30:30:SKILLS_COMMAND
-Military Discipline:8:Barked orders and rigid authority can snap a mutiny in seconds. The mutiny ends and Morale of entire crew is increased by 10 + Command skill:260:30:SKILLS_COMMAND
-Boarding Rush:11::0:30:SKILLS_TACTICS
-Gut Instinct:1:Prevent Explorer Failures.:30:31:SKILLS_EXPLORER
-Vigilant Search:1:When Exploring a Wild Zone, reroll any card:30:31:SKILLS_EXPLORER
-Plentiful Rewards:1:When Exploring a Wild Zone, increase reward by 10% + Explore Skill:60:31:SKILLS_EXPLORER
-Far Voyager:1:An expert rover knows the ins and outs of the Hyperwarp, reduces fuel cost by 2 + Explore Skill:30:31:SKILLS_EXPLORER
-Unseen Traces:5:When landing in a Wild Zone, 10% + Explore Skill chance of discovering traces of a Contact who has operatives working in the area:130:31:SKILLS_EXPLORER
-Reduced Exposure:5:When Exploring a Wild Zone, remove a risk card:30:31:SKILLS_EXPLORER
-Artifact Profiteer:5:When selling Xeno Artifacts, increase the profit of the deal by 25% + Explore Skill:90:31:SKILLS_EXPLORER
-Makeshift Repairs:5:Upon landing in a Wild Zone, automatically repair damage to 2 Ship Components equal to Richness rating up to Explore Skill:130:31:SKILLS_EXPLORER
-Dredge Artifacts:8:Pick over the wreck of a destroyed xeno ship to recover a number of Artifacts up to your Explore Skill:60:31:SKILLS_EXPLORER
-Face the Terror:8:When encountering a xeno ship in space combat, prevents Morale loss on up to Explorer Skill number of crew:60:31:SKILLS_EXPLORER
-Legacy Seeker:8:When Exploring a Wild Zone, replace a risk with a reward card:30:31:SKILLS_EXPLORER
-Digging Deeper:11:When Exploring a Wild Zone, increase all resource or artifact rewards by 30% + Explorer Skill:60:31:SKILLS_EXPLORER
-Deft Control:5:Prevent Electronics Failures.:30:32:SKILLS_ELECTRONICS
-Sly Move:1:Prevent Stealth Failures.:30:32:SKILLS_STEALTH
-Espionage Sweep:1:When Spying in the orbit of a system, remove a risk card:30:32:SKILLS_ELECTRONICS
-Scouring Search:5:When Spying in the orbit of a system, replace a risk card with an Intel Records reward card.:30:32:SKILLS_ELECTRONICS
-Close Observation:1:Sharp scrutiny grants Wisdom % to reveal a Contact's hidden Traits during any interaction where money changes hands:180:32:SKILLS_ELECTRONICS
-Data Haul:8:Increases price for sold Intel Records by 10% + Electronics Skill. Contact Influence gains or losses increased by Charisma %:30:32:SKILLS_ELECTRONICS
-High Stakes:11:When Spying in the orbit of a system, increase all Intel rewards by 30% + Electronics Skill:60:32:SKILLS_ELECTRONICS
-Secrets Unbound:11:Upon landing in an Urban Zone, 10% + Electronics Skill chance to gather Intel Records about the local Faction:130:32:SKILLS_ELECTRONICS
-Attentive Overhaul:1::30:33:SKILLS_REPAIR
-Port Maintenance:1:Upon landing, automatically repairs damage to 2 to 4 Ship Components equal to 10% up to Repair skill:130:33:SKILLS_REPAIR
-Boarder's Demolition:5:rig an explosion which leaves the enemy ship vulnerable to continued attack:90:33:SKILLS_REPAIR
-Assisted Installation:5:Discounts any upgrade of a ship component at the Starport by 10% + Repair Skill:30:33:SKILLS_REPAIR
-Warfare Patch:5:In the aftermath of a victorious ship battle, repair damage to multiple Ship Components equal to 10% + Repair Skill:60:33:SKILLS_REPAIR
-Stormhunter:8:Careful study of readings and conditions allows Engineer to guide the ship through Radiation Storms (quadrant) and Ion Storms (system) while granting additional Experience reward:60:33:SKILLS_REPAIR
-Perilous Study:11:When encountering a xeno ship, rapid analysis of the ship's scanner data reveals new findings about the xeno and grants additional Experience reward:30:33:SKILLS_ELECTRONICS
-Unforeseen Discovery:11:When Exploring a Wild Zone, replace a risk card with a Experience bonus card:90:33:SKILLS_REPAIR
-Watchful Eye:1:Prevents Ship Ops failures.:30:34:SKILLS_SHIPOPS
-Stern Leader:1:Prevents Command failures.:30:34:SKILLS_COMMAND
-Perceptive Boss:1:When paying your crew, your intuition grants a 30% + Command Skill chance to learn hidden Trait from among your crew:90:34:SKILLS_COMMAND
-Hard Bargain:8:When buying a new ship, gain a discount up to Repair Skill with maximum of 15%:30:33:SKILLS_REPAIR
-Contract Bargain:1:When landing in a zone, the highest level crew member who attempts to abandon the ship reconsiders, but their salary increases by $2:30:34:SKILLS_SHIPOPS
-Reliable Hand:5:When accepting a Mission, increases payment by 10% + Intimidate Skill:30:34:SKILLS_INTIMIDATE
-Calming Speech:5:Speaking as a leader but also as a member of the crew, the quartermaster knows what to say. The mutiny ends and Morale of the entire crew is increased by 20 + Command skill:130:34:SKILLS_COMMAND
-Welcoming Conscription:8:When conscripting enemy to serve in your crew after a ship victory, new crew member starts with higher Morale and does not gain new negative Traits:30:34:SKILLS_COMMAND
-Call to Arms:8:When encountering a xeno ship in space combat, prevents Morale loss on up to Intimidate Skill number of crew:60:34:SKILLS_INTIMIDATE
-Second Shadow:11:Watching crew like a hawk, saves a life during ship combat, blockade, spying, patrol or black market. Crew member is restored to HP equal to Command Skill + 3 x Medical Rating of onboard medical components:90:34:SKILLS_COMMAND
-Safety Protocols:1:Prevent Ship Ops Failures.:30:1:SKILLS_SHIPOPS
-Talk in the Hall:5:When passing the Spice plate in the Hall, affable talk uncovers a new Rumor:30:1:SKILLS_SHIPOPS
-Methodical Sweep:1:When Patrolling a system, reroll a risk card:30:1:SKILLS_SHIPOPS
-Relaxing Leave:1:When passing the Spice plate in the Hall, grant all other revelers a Morale bonus equal to 30% of your Charisma:90:1:SKILLS_SHIPOPS
-Hawkish Siege:5:When Blockading a system, reroll a risk card:30:1:SKILLS_SHIPOPS
-Battle Damage Repair:8:In the aftermath of a ship battle, repair one Ship Component damage equal to 10% + Repair Skill:60:1:SKILLS_REPAIR
-Careful Testing:1:Prevent Repair Failures.:30:2:SKILLS_REPAIR
-Discounted Repairs:1:Reduces cost of ship and small craft repair at a Starport by 10% + Repair Skill:30:2:SKILLS_REPAIR
-Orchestrated Salvage:1:Salvage the wreck of a destroyed ship for valuable scrap, add 10% + Repair Skill to your profits and repair equal % of your own Hull :30:2:SKILLS_REPAIR
-Thrown Wrench:5:sabotages components to cause a ripple effect of damage and death:90:2:SKILLS_REPAIR
-Helpful Hands:8:Discounts any upgrade of a ship component at the Starport by 10% + Repair Skill:30:2:SKILLS_REPAIR
-Hotwire:1:Prevent Electronics Failures.:30:3:SKILLS_ELECTRONICS
-Alert Scanner:1:Upon entering the orbit of a new system, 10% + Electronics Skill chance to learning a Rumor:90:3:SKILLS_ELECTRONICS
-Signature Jammer:1:Masks ship's signal to prevent identification. When ending a ship encounter in a draw, reduce possible Reputation damage by up to Electronics Skill:30:3:SKILLS_ELECTRONICS
-Storm Shielding:1:Protects the ship and crew from damage when flying through Radiation Storms (quadrant) and Ion Storms (system) by redirecting and modulating ship shielding:20:3:SKILLS_ELECTRONICS
-Wide Sweep:5:When Spying in the orbit of a system, reroll a risk card:30:3:SKILLS_ELECTRONICS
-Static Talks:5:When Spying in the orbit of a system, learn a Rumor when scoring a positive result:90:3:SKILLS_ELECTRONICS
-Listening Post:8:Upon landing in an Urban Zone, 10% + Electronics Skill chance of learning about a new Contact by snooping on local transmissions:130:3:SKILLS_ELECTRONICS
-Meteor Defense:5:Reduces damage caused to your ship and crew from a Meteor Storm in orbit of a system by up to Gunnery Skill:20:4:SKILLS_GUNNERY
-Loot Armory:1:As an expert in military hardware, looting a captured vessel repairs up to 3 of your Ship's Weapon Components by 10% + Gunnery Skill:60:4:SKILLS_GUNNERY
-Supremacy of Firepower:5:When Patrolling a system, remove a risk card:30:4:SKILLS_GUNNERY
-Twitchy Trigger:8:When Blockading a system, remove a risk card:30:4:SKILLS_GUNNERY
-Disarming Sabotage:5:ruthless sabotage disables best enemy weapon, causing 80% damage:90:4:SKILLS_GUNNERY
-Read Charts:1:Prevent Navigation Failures.:30:16:SKILLS_NAVIGATION
-Efficient Route:1:Methodical planning of Hyperwarp Jumps reduces fuel cost by 4 + Navigation skill:30:16:SKILLS_NAVIGATION
-Orderly Drop:5:Lands efficiently in a zone, reduces operation time to 1 Turn and Fuel Cost to 1:30:16:SKILLS_NAVIGATION
-Storm Navigator:1:Astute and careful direction from the helm protects the ship and crew from damage when flying through Radiation Storms (quadrant) and Ion Storms (system) :20:16:SKILLS_NAVIGATION
-Distant Commission:8:When accepting a Mission that requires more than 4 Hyperwarp jumps, increase payment by 3% bonus per jump, to a maximum of 30% bonus:30:16:SKILLS_NAVIGATION
-Talk of Far Worlds:8:When on spice leave in the hall, talk of distant worlds grants a 10% + Navigation Skill chance for an introduction to a new Contact:130:16:SKILLS_NAVIGATION
-Skip Off the Void:11:Uses a short-burst of the hyperwarp drive to 'bounce' a short distance and escape ship combat. Causes 30-60% Damage to the drive, mitigated by Navigation Skill and burns Fuel equal to a hyperwarp jump:90:16:SKILLS_NAVIGATION
-Ferocity:1::0:5:SKILLS_HEAVY_FIREARMS
-Raining Steel:1::0:6:SKILLS_EVASION
-Bravery Line:1::0:8:SKILLS_MELEE
-First Aid:1:Prevents Doctor Failures.:30:11:SKILLS_DOCTOR
-Medical Staff:1:Prevent Doctor Failures.:30:12:SKILLS_DOCTOR
-Life Saver:5:Saves a life during ship combat, blockade, spying, patrol or black market. Crew member is restored to HP equal to Doctor Skill + 3 x Medical Rating of onboard medical components:90:12:SKILLS_DOCTOR
-Assisted Care:1:Reduces the price for medical care at the Doctor by 10% + Doctor Skill:30:12:SKILLS_DOCTOR
-Medical Ward:5:Upon defeating an enemy ship, heal 3 crew, or up to (Medical Rating x 3) on ships with advanced medical facilities. Each patient gains 10 + Doctor Skill in HP:60:12:SKILLS_DOCTOR
-Generous in Service:8:If ship's Medical Rating exceeds zone's Economy Rating, free medical care to citizenry gains Rep up to Medical Rating but max 10 with diminishing returns above 40 Rep:130:12:SKILLS_DOCTOR
-Voice of Reason:8:A ship's crew loves a good doctor, and a calm voice of reason can calm angry minds. The mutiny ends and Morale of entire crew is increased by 10 + Doctor skill:260:12:SKILLS_DOCTOR
-Settlement:1:Prevents Negotiate Failures.:30:13:SKILLS_NEGOTIATE
-Winning Compromise:1:When accepting a Mission, increases your payment for every step in a Mission by 10% + Negotiate Skill:30:13:SKILLS_NEGOTIATE
-Silver Tongue:1:Price for military Rank is discounted by 10% + Negotiate Skill:30:13:SKILLS_NEGOTIATE
-Expose Quality:1:Empathetic sense grants Wisdom % to reveal a Contact's hidden Traits during any interaction where money changes hands:180:13:SKILLS_NEGOTIATE
-Hand that Feeds:5:When paying your crew, increase Morale bonus for those paid. Any Morale penalty for any unpaid crew is reduced:30:13:SKILLS_NEGOTIATE
-Upstaged Success:5:When completing steps in a Mission, increase Contact Reputation and Influence bonuses by Charisma %:90:13:SKILLS_NEGOTIATE
-Magnanimous Victory:8:Forgiving and charitable even in victory over another ship, negates Reputation damage up to your Negotiate Skill:60:13:SKILLS_NEGOTIATE
-Legal Pressure:8:Increase profit when ransoming defeated ship back to their faction by 20% + Intimidate Skill at the cost of 0-2 extra Rep loss:90:13:SKILLS_INTIMIDATE
-Political Hooks:11:Increase Conflict Score bonus by 10% + Faction Rank when impacting a Conflict through Missions, Spying, Blockade or Patrol:30:13:SKILLS_INTIMIDATE
-Scout's Intuition:1:Prevents Explorer Failures.:30:18:SKILLS_EXPLORER
-Persistent Search:1:When Exploring a Wild Zone, increase reward by 10% + Explore Skill:60:18:SKILLS_EXPLORER
-Keen Senses:5:When Exploring a Wild Zone, reroll any card:30:18:SKILLS_EXPLORER
-Famous Fury:1:Prevents Intimidate failure.:30:15:SKILLS_INTIMIDATE
-Righteous Rank:1:Price for military Rank is discounted by 10% + Command Skill:30:15:SKILLS_COMMAND
-Rough Interrogation:1:Upon victory in ship combat, thoroughly questioning the enemy crew creates up to your Intimidate Skill in Intel Records but causes further Rep loss:90:15:SKILLS_INTIMIDATE
-Unbending Law:1:When landing in a zone, the highest level crew member who attempts to abandon the ship reconsiders, but their salary increases by $2:30:15:SKILLS_INTIMIDATE
-Fanatical Siege:5:During a Blockade of a system, replace a risk card with a Tithe or Influence Conflict reward card:30:15:SKILLS_INTIMIDATE
-Obsessive Defense:5:When Patrolling a system, replace a card with a Pirate reward card:30:15:SKILLS_COMMAND
-Retribution Justice:5:Increase Conflict Score bonus by 10% + Faction Rank when impacting a Conflict through Missions, Spying, Blockade or Patrol:30:15:SKILLS_INTIMIDATE
-Infliction Rage:11::0:15:SKILLS_INTIMIDATE
-Faked Signature:5:Confusing or forged credentials are enough to throw even the most dogged pursuer; can be used to reduce the hostility of Bounty Hunters:30:27:SKILLS_NEGOTIATE
-Counterfeit Identity:8:Confusing or forged credentials are enough to throw even the most dogged pursuer; can be used to reduce the hostility of Bounty Hunters:30:32:SKILLS_ELECTRONICS
-Blackheart Fraud:8:Confusing or forged credentials are enough to throw even the most dogged pursuer; can be used to reduce the hostility of Bounty Hunters:30:28:SKILLS_PILOT
-Strict Search:1:Military discipline demands a thorough search, which uncovers secret hideaways on ships of defeated Smugglers; new lootable cargo is revealed:90:30:SKILLS_TACTICS
-Buzzing Wires:1:When attempting to access a Black Market, remove a risk card:30:3:SKILLS_ELECTRONICS
-Clink of Credits:11:When Spying in the orbit of a system, replace a risk card with a Credit Skim or Score reward card:30:3:SKILLS_ELECTRONICS
-Devoted Service:1:When completing steps in a Mission, increase Faction Reputation bonuses 10% + Command Skill:90:15:SKILLS_COMMAND
-Cloak and Dagger:11:When Spying in the orbit of a system, replace a risk card with an Mission Success reward card:30:32:SKILLS_ELECTRONICS
-Driven Prospector:11:When Exploring a Wild Zone, replace a risk with a Mission Success reward card:30:31:SKILLS_EXPLORER
-Terror of the Skies:11:During a Blockade of a system, replace a risk card with a Mission Success reward card:30:28:SKILLS_INTIMIDATE
-Guardian Vigil:11:When Patrolling a system, replace a risk card with Mission success reward card:30:30:SKILLS_COMMAND
-Diehard Defense:11:When Patrolling a system, replace a risk card with Mission success reward card:30:15:SKILLS_COMMAND
-Artifact Hunter:11:When Exploring a Wild Zone, replace a risk card with an Artifacts reward card; however there is a Danger-based chance to draw Artifacts guarded by xeno card instead:90:18:SKILLS_EXPLORER
-Bio-Agent Bomb:5:release deadly bio-agents into the enemy ship's ventilation:90:11:SKILLS_DOCTOR
-Warm Invitation:5:Discount price of Contact Introductions by 10% + Negotiate Skill:30:13:SKILLS_NEGOTIATE
-Exacting Design:1:Prevent Tactics Failures.:30:16:SKILLS_TACTICS
-Ferocious Crossfire:5:sprays the corridor and decks with hexshell fire and leaves a trail of wounded; 4 enemy crew suffer 30-50 Damage:90:5:SKILLS_HEAVY_FIREARMS
-Call for Surrender:5:demand for quick surrender cause 4 enemy crew to suffer Morale loss up to 30 + Tactics Skill:90:30:SKILLS_TACTICS
-Unauthorized Access:5:break into the enemy ship's data banks; steals up to Electronics Skill in Intel Records:90:32:SKILLS_ELECTRONICS
-Summary Execution:8:Capital punishment of the lowest Morale mutineer quickly reminds the crew who is in charge. The mutiny ends and Morale of the entire crew is increased by 20 + Intimidate Skill:260:15:SKILLS_INTIMIDATE
-Red Badge:5:When completing steps in a Mission and bearing an Edict of the sponsoring Faction, your fearsome prestige reduces your Reputation loss by up to Intimidate Skill:180:29:SKILLS_INTIMIDATE
-Honorable Release:8:Increase profit when ransoming defeated ship back to their Faction by 10% + Command Skill, plus Wisdom % chance to gain small Reputation bonus:90:30:SKILLS_COMMAND
-Slippery Trader:5:When trading into a Trade Ban or War, reduces the Rep penalty by 30% + double Negotiate Skill:90:27:SKILLS_NEGOTIATE
-Vat-Born Fury:1::0:1004:SKILLS_MELEE
-Dominant Eye:1::0:7:SKILLS_STEALTH
-Target Acquired:1::0:7:SKILLS_STEALTH
-Crafty Twist:5::50:7:SKILLS_STEALTH
-Parting Gift:8:fires one final shot with deadly accuracy and kills an unlucky target; one enemy crew member dies:90:7:SKILLS_HEAVY_FIREARMS
-Hitman Rush:1::0:10:SKILLS_STEALTH
-First Blood:1::0:10:SKILLS_STEALTH
-Never There:5::50:10:SKILLS_MELEE
-Targeted Killing:8:a fleeting shadow moves among the enemy crew killing an unlucky target; one enemy crew member dies:90:10:SKILLS_STEALTH
-Murderous Tribute:15:Upon defeating an enemy captain during a Conflict, seize their ship through a local prize court. We must pay the court 40% of the ship's value in tithes and fees and we will lose 75 Reputation with the enemy while striking a mighty blow in the Conflict:360:28:SKILLS_INTIMIDATE
-Fanatical Court:15:Upon defeating an enemy captain during a Conflict, seize their ship through a local prize court. We must pay the court 65% of the ship's value in tithes and fees and we will lose 40 Reputation with the enemy while striking a mighty blow in the Conflict:360:15:SKILLS_INTIMIDATE
-Military Tribunal:15:Upon defeating an enemy captain during a Conflict, seize their ship through a local prize court. We must pay the court 75% of the ship's value in tithes and fees and we will lose 30 Reputation with the enemy while striking a mighty blow in the Conflict:360:30:SKILLS_COMMAND
-Gut the Leadership:15:whirling shade strikes down an enemy leader; one enemy officer dies. If there is no officer to take the hit, the enemy Captain takes up to 30 + Stealth Skill Dmg:180:10:SKILLS_STEALTH
-Unstoppable Hunt:15:When Exploring a Wild Zone, reroll all 5 cards and draw a new hand:210:31:SKILLS_EXPLORER
-Incorrigible Sneak:15:When attempting to access a Black Market, reroll all 5 cards and draw a new hand:210:27:SKILLS_NEGOTIATE
-Enduring Defender:15:When Patrolling a system, reroll all 5 cards and draw a new hand:210:15:SKILLS_TACTICS
-Rampant Theft:15:When Spying in the orbit of a system, reroll all 5 cards and draw a new hand:210:32:SKILLS_ELECTRONICS
-Unbridled Raider:15:During a Blockade of a system, reroll all 5 cards and draw a new hand:210:28:SKILLS_INTIMIDATE
-Stalwart Loyalist:15:When Patrolling a system, reroll all 5 cards and draw a new hand:210:30:SKILLS_TACTICS
-Adept Mediation:5:When completing steps in a Mission using Negotiation Skill legally (not bribes), your careful mediation mitigates your Reputation loss by up to Negotiation Skill:180:13:SKILLS_NEGOTIATE
-Stealth Op:5:When completing steps in a Mission with Stealth Skill, your carefully established cover mitigates your Reputation loss by up to Stealth Skill:180:32:SKILLS_STEALTH
-Raider's Scrutiny:1:Experienced pirates can spot the slightest signs and anomalies in an arc scanner reading, identifying how many units of raw, manufactured and rare cargo a ship is carrying:90:28:SKILLS_INTIMIDATE
-Dubious Handshake:1:When encountering a Smuggler Captain, a subtle greeting among criminals ends the encounter in a peaceful Draw; 30% + Negotiation chance to learn a new Rumor:120:27:SKILLS_NEGOTIATE
-Pick Clean:1:While Salvaging at an Orbital, increase cargo rewards by 10% + Explore Skill:60:19:SKILLS_EXPLORER
-Artful Solder:1:Prevent Repair Failures.:30:19:SKILLS_EXPLORER
-Calculated Search:1:While Salvaging at an Orbital, reroll a risk card:30:19:SKILLS_EXPLORER
-Diamond in the Debris:1:When Exploring a Wild Zone, increase reward by 10% + Explore Skill:60:19:SKILLS_EXPLORER
-Careful EVA:5:While Salvaging at an Orbital, remove a risk card:90:19:SKILLS_EXPLORER
-Picky Looters:5:While Salvaging at an Orbital, replace a risk card with a credit-bearing Salvage card:90:19:SKILLS_EXPLORER
-Light-Foot Tracker:5:When Exploring a Wild Zone, remove a risk card:30:19:SKILLS_EXPLORER
-Cascading Destruction:5:rapidly sabotaging a nearby component causes 40% + Repair Skill in damage:130:19:SKILLS_EXPLORER
-Patchwork :8:When Exploring a Wild Zone, replace a risk card with a Ship Repairs card:60:19:SKILLS_REPAIR
-Dogged Treatment:8:Prevent Doctor Failures.:60:19:SKILLS_EXPLORER
-Rescue Mission:11:While Salvaging at an Orbital, replace a risk with a Mission Success reward card:30:19:SKILLS_EXPLORER
-Scrappy Recovery:11:When Exploring a Wild Zone, replace a risk card with a Scrappy Healing card:30:19:SKILLS_DOCTOR
-Master Reclamation:15:When Salvaging at an Orbital, reroll all 5 cards and draw a new hand:210:19:SKILLS_EXPLORER
-Recovery Plan:1:While Salvaging at an Orbital, reroll a risk card:60:1:SKILLS_REPAIR
-Scrap Procedures:5:While Salvaging at an Orbital, increase credit rewards by 20% + Repair Skill:60:1:SKILLS_REPAIR
-Weakened System:5:While Salvaging at an Orbital, increase credit and Intel rewards by 10% + Electronics Skill:60:3:SKILLS_ELECTRONICS
-Orbital Guard:5:While Salvaging at an Orbital, remove a risk card:60:4:SKILLS_REPAIR
-Prowling the Void:8:While Salvaging at an Orbital, increase any Reputation rewards by 10% + Gunnery Skill:60:4:SKILLS_GUNNERY
-Repurposed Parts:5:While Salvaging at an Orbital, replace a risk card with a Ship Repairs card:90:2:SKILLS_REPAIR
-Entropic Estimate:1:While Salvaging at an Orbital, predicts the time remaining on the orbital salvage Rumor:180:2:SKILLS_REPAIR
-Astounding Find:8:While Salvaging at an Orbital, replace a risk card with a Experience Bonus card:60:33:SKILLS_REPAIR
-Nose for Loot:8:While Salvaging at an Orbital, replace a risk card with a Rare Trade Loot card:130:28:SKILLS_INTIMIDATE
-Light-Fingers:8:While Salvaging at an Orbital, increase cargo rewards by 10% + Stealth Skill:60:27:SKILLS_STEALTH
-Flash Charge:15:Uses a short hyperwarp burst to charge an enemy ship; start battle at Range 4 or 3 based on an Engine Agility test. Causes 5-15% Damage to the drive and burns Fuel equal to a 25% of a hyperwarp jump:90:16:SKILLS_NAVIGATION
-Rarest Find:11:When Exploring a Wild Zone, replace a risk card with an Rare Trade Goods reward card; however there is a Danger-based chance to draw Rare Trade Goods guarded by pirates instead:90:31:SKILLS_EXPLORER
-Void Endurance:1:On Init Toughness:0:1013:SKILLS_MELEE
-Void Strength:1:On Init Mad Damage:0:1013:SKILLS_MELEE
-Radiation Heart:1::0:1012:SKILLS_MELEE
-Scitterring Rush:1::0:1012:SKILLS_MELEE
-Cold-blooded Threats:8:threats of merciless reprisal cause 3 enemy crew to suffer Morale loss up to 40 + Intimidate Skill:130:29:SKILLS_INTIMIDATE
-Silent Executioner:5:Price for death warrant Edict is discounted by 10% + Stealth Skill:30:10:SKILLS_STEALTH
-Trick of the Eye:15::0:7:SKILLS_STEALTH
-Daunting Presence:1:Prevent Intimidate Failures.:30:20:SKILLS_INTIMIDATE
-Unflinching Risk:1:When Exploring a Wild Zone, reroll any card:30:20:SKILLS_EXPLORER
-Here Be Monsters:5:When Patrolling a system, replace a card with a dreaded Xeno Ship card:30:20:SKILLS_INTIMIDATE
-Irid-Laced Resolve:1::0:20:SKILLS_INTIMIDATE
-Macabre Harvest:5:Upon victory in crew combat against xeno, xenobiological expertise allows harvesting a number of Xeno Artifacts up to Explorer Skill:90:20:SKILLS_EXPLORER
-We The Hunters:1:When encountering a xeno ship in space combat, prevents Morale loss on up to Intimidate Skill number of crew:60:20:SKILLS_INTIMIDATE
-Blooded Lure:1:When Exploring a Wild Zone, replace a risk card with a dreaded Xeno card with an Explorer Skill chance draw Artifacts guarded by xeno card instead:30:20:SKILLS_INTIMIDATE
-Soul Piercer:8:When Recruiting, new crew member gains improved Attributes and you discover one of their hidden Traits.:30:20:SKILLS_INTIMIDATE
-Triumphant Predator:11:Upon victory in ship combat against xeno, mastery over the void's terrors restores 10 + up to Intimidate Skill Morale to every crew member:180:20:SKILLS_INTIMIDATE
-Eradication Prize:15:When salvaging a destroyed xeno ship in the void, gain 30% + Explorer Skill bonus to Experience, Rep and credit gains:180:20:SKILLS_EXPLORER
-Exalted Hunter:11:When accepting a Mission to hunt xeno, increases payment by Charisma + Intimidate Skill % in addition to bonuses from standard Mission Talents:90:20:SKILLS_INTIMIDATE
-Breacher's Assault:1:Launch a Shuttle craft with a 4 Turn flight plan (close, board, retreat, land) to make a boarding run against the enemy ship:0:25:SKILLS_PILOT
-Trapped Compartments:1:deadly devices brought from the Shuttle and hidden within the ship surprise, maim and kill:90:25:SKILLS_PILOT
-Scrambled Authorization:5:When accessing a Black Market as the pilot of a Shuttle craft, replace a risk card with Market Access 2 to 4:30:25:SKILLS_PILOT
-Launchpad Spike:1:attacking a carrier's hangers and bays damages all landed craft up to 20% + Pilot Skill of their max hull:90:25:SKILLS_PILOT
-Behind Enemy Lines:5:clever sabotage disables best enemy weapon, causing 80% Damage:90:25:SKILLS_PILOT
-Boarder's Storm:8:Launch a Shuttle craft with a 4 Turn flight plan (close, board, retreat, land) to make a boarding run against the enemy ship:0:25:SKILLS_COMMAND
-Predictive Intel:11::0:25:SKILLS_MELEE
-Grandiose Arrival:11:When completing Mission steps that pick up or drop off a new Passenger or Prisoner on an urban zone, gain up to 20% + Pilot Skill profit:180:25:SKILLS_PILOT
-Bombing Run:1:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:SKILLS_COMMAND
-Hull Buster:1:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:SKILLS_INTIMIDATE
-Ensnare:1:When Blockading a system as the pilot of a Bomber craft, remove a risk card:30:35:SKILLS_ELECTRONICS
-Explosive Screen:1:Reduces damage caused to your ship and crew from a Meteor Storm in orbit of a system by up to Electronics Skill:20:35:SKILLS_ELECTRONICS
-Shutter Strike Pattern:5:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:SKILLS_MELEE
-PX Incendiary Payload:5:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:SKILLS_INTIMIDATE
-Intimidating Fly Over:5:When completing Mission steps in an urban zone, increase faction Reputation bonuses 20% + Pilot Skill with a chance add -1 Rep loss with local faction:90:35:SKILLS_COMMAND
-Ruthless Destruction:5:Bombing a disabled ship into oblivion increases both credit and Rep rewards from destroy and salvage by 10% + Electronics Skill:30:35:SKILLS_INTIMIDATE
-Deliberate Destruction:8:While Salvaging at an Orbital as the pilot of a Bomber craft, replace a risk card with Bombed Salvage card (20-40K credits). If used on a Orbital Construction or Disaster Rumor, drawing Bombed Salvage causes 2-4 Rep loss:90:35:SKILLS_PILOT
-Alarming Pass:8:When Blockading a system as the pilot of a Bomber craft, increase all credit rewards by 20% + Electronics:90:35:SKILLS_ELECTRONICS
-Havoc Burst Pattern:11:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:SKILLS_COMMAND
-Aegis Pattern:1:Launch an Interdictor craft with a 3 Turn flight plan to defend the ship from enemy fighters and shoot down up to one enemy Missile or Torpedo a Turn:0:36:SKILLS_COMMAND
-Strafing Run:1:Launch a Interdictor craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a attack run against the enemy ship:0:36:SKILLS_INTIMIDATE
-Unexpected Swoop:1:When Patrolling a system as the pilot of an Interdictor craft, remove a risk card:30:36:SKILLS_GUNNERY
-Precise Pursuit:5:Launch a Interdictor craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a attack run against the enemy ship:0:36:SKILLS_INTIMIDATE
-Tip of the Spear:5:Launch an Interdictor craft with a 3 Turn flight plan to defend the ship from enemy fighters and shoot down up to one enemy Missile or Torpedo a Turn:0:36:SKILLS_INTIMIDATE
-Ransom Escort:5:Interdictor escort increases profit when ransoming defeated ship back to their Faction by 10% + Pilot Skill, plus Quickness % chance to gain small Reputation bonus:90:36:SKILLS_PILOT
-Long Range Support:8:When Exploring a Wild Zone as the pilot of a Shuttle craft, increase rewards by 20% + Pilot Skill:90:25:SKILLS_PILOT
-Extended Vigil:8:When Patrolling a system as the pilot of an Interdictor craft, increase rewards by 20% + Gunnery Skill:90:36:SKILLS_GUNNERY
-Interdiction Swarm:11:Launch a Interdictor craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a attack run against the enemy ship:0:36:SKILLS_INTIMIDATE
-Screening Swarm:11:Launch an Interdictor craft with a 3 Turn flight plan to defend the ship from enemy fighters and shoot down up to one enemy Missile or Torpedo a Turn:0:36:SKILLS_COMMAND
-Recovery Pod:1:When a craft is destroyed in ship combat, the pilot is saved and restored to HP equal to Doctor Skill + 3 x Medical Rating of onboard medical components:30:17:SKILLS_COMMAND
-Airtight Plan:1:Tactics save:30:17:SKILLS_INTIMIDATE
-Fleet Maintenance:1:Reduces cost of ship and small craft repair at a Starport by 10% + Repair Skill:30:17:SKILLS_REPAIR
-Discounted Acquisition:5:Reduces cost of purchasing a new small craft by Repair Skill %:180:17:SKILLS_REPAIR
-Rapid Refurb:5:Whenever a craft incurs a Maintenance Point for any reason, automatically prevents the Maintenance Point:30:17:SKILLS_MELEE
-Hanger Triage:8:In the aftermath of a victorious ship battle, repair hull of 2-3 small craft up to 10% + Repair Skill:30:17:SKILLS_COMMAND
-Long Patrol:8:While Salvaging at an Orbital as the pilot of an Interdictor craft, remove a risk card:90:36:SKILLS_PILOT
-Cull the Chaff:8:When Recruiting the trained eye of a soldier spots the best, new crew member gains improved Attributes and you discover one of their hidden Traits:30:25:SKILLS_MELEE
-Hostile Tribunal:15:Upon defeating an enemy captain during a Conflict, seize their ship through a local prize court. We must pay the court 50% of the ship's value in tithes and fees and we will lose 60 Reputation with the enemy while striking a mighty blow in the Conflict:360:25:SKILLS_INTIMIDATE
+Slash:1:Auto-granted attack for carring a Blade:1:0:-1
+Open Fire:1:Auto-granted attack for carring a Pistol:1:0:-1
+Short Burst:1:Auto-granted attack for carring a Rifle:1:0:-1
+Aura of Command:1::30:23:7
+Steady Hands:1::60:23:-2
+Discerning Glance:1:When Recruiting, new crew member gains improved Attributes and you discover one of their hidden Traits.:30:23:13
+Loyalty Rousing:1:In the aftermath of a ship battle, give an inspiring speech which causes up to 10 crew gain 10 + Command Skill in Morale:60:23:83
+Rallying Aura:1::12:23:-1
+Damning Aim:5::1:30:-1
+Quell Mutiny:5:Powerful words from a strong leader pull the crew together. The mutiny ends and Morale of the entire crew is increased by 10 + Command skill:260:23:42
+Bolster:8::6:23:-1
+Barked Order:5::12:23:-1
+Shrewd Dealings:8:When accepting a Mission, gain a (Charisma + Command %) chance to discover one of your Contact's hidden Traits:180:23:10
+Precision Action:8::60:23:-2
+Scorn:11::8:23:-1
+Coordinated Fire:11::30:23:-2
+Expert Maneuver:1:Prevent Pilot Failures.:30:24:2
+Guided Fire:1::30:24:-2
+Sure Landfall:1:Lands efficiently on a world, reduces operation time to 1 Turn and Fuel Cost to 1:30:24:63
+Evasive Maneuvers:1::30:24:-2
+Sharp Steering:1::30:24:-2
+Swift Route:5:Precision planning and twitch reflexes in Hyperwarp Jump reduces fuel cost by 2 + Navigation Skill:30:24:35
+Broadside Angle:5::30:24:-2
+Twitch Surge:5:Guarantees successful movement to closer range; 10% + Quickness chance to advance 2 positions:30:24:-2
+Swift Sweep:8:When Spying in the orbit of a system, remove a risk card:30:24:53
+Devastating Shot:8::30:24:-2
+Forward Thrusters:11::30:24:-2
+Wild Flying:11::30:24:-2
+Wise Counsel:1:Prevent Negotiate Failures.:30:26:24
+Known Trader:1:Discounts price for trading Permit by 10% + Negotiate Skill. Contact spends Charisma % less Reputation:30:26:32
+Market Confidant:1:When executing a trade at the Exchange worth over $5,000, you have a 10% + Charisma chance of gaining an introduction to a Contact from the local Faction:90:26:36
+Friendly Banter:1:When on spice leave in the hall, you have a Charisma % chance to learn about a Contact from the idle banter in the Hall:130:26:18
+Garner Favor:5:When executing a trade at the Exchange worth over $5,000, gain Reputation up to your Negotiate Skill with the local Faction:90:26:36
+Cordial Invitation:5:Receive up to your Negotiate Skill in Reputation bonus with a new Contact when buying an Introduction:30:26:91
+Generosity:5:When paying your crew, increase Morale bonus for those paid. Any Morale penalty for any unpaid crew is reduced:30:26:21
+Jettison Cargo:5:Dumping one randomized type of our ship's cargo into space buys time to escape a Pirate before Ship Combat starts:30:26:72
+Righteous Profits:8:When executing a trade at the Exchange worth over $5,000, barters to increase your profit of sale or reduce price of purchase by 10% + Negotiate Skill:90:26:36
+Trader's Reciprocity:8:When executing a trade at the Exchange worth over $5,000, gain Reputation equal to your Trade Permit Rank with all known Contacts in the zone of the trade:90:26:36
+Bold Statement:11:Trading into a Trade Ban or War grants Rep bonus with second Faction up to the Rep penalty with the offended Faction:90:26:96
+Lucrative Wholesale:11:When executing a trade at the Exchange worth over $50,000, generates Intel Records up to Negotiate Skill from market insight:90:26:95
+Cunning Slip:1:Prevent Stealth Failures.:30:27:25
+Underground Whispers:1:When accessing a Black Market, replace a risk card with a Learn Rumor card:30:27:79
+Hideout:1:Prevents seizure of packages, prisoners or passengers when searched by an enemy vessel:30:27:65
+Backroom Deal:1:When attempting to access a Black Market, replace a risk card with a Market Access card:30:27:79
+Insider Trading:8:When executing a trade at the Black Market worth over $5,000, gain Reputation up to your Negotiate Skill with your Contact:90:27:38
+Bootleg Profits:5:When executing a trade at the Black Market worth over $5,000, increase your profit of sale or reduce price of purchase by 20% + Negotiate Skill:90:27:38
+Forged Permit:5:Well-forged documents can open doors; can be used to reduce the hostility of military ships encountered in travel:30:27:71
+Garbled Identity:5:Masks ship's signal to prevent identification. When ending a ship encounter in a draw, reduce possible Reputation damage by up to Stealth Skill:30:27:64
+Underworld Renown:8:When attempting to access a Black Market, replace a risk card with a Market Access card that includes Contact Influence bonus:30:27:79
+Illicit Notoriety:1:When accessing a Black Market, always gain access at one Access Level higher:30:27:80
+Criminal Connections:11:When executing a trade at the Black Market worth over $5,000, gain a 30% + Charisma chance to learn about a Contact:90:27:38
+Unlawful Royalty:11:When executing a trade at the Black Market worth over $50,000, gain a 50% + Charisma chance to learn about a Smuggler or Smuggler Prince Contact:90:27:94
+Icy Stare:1:Prevent Intimidate Failures.:30:28:9
+Rigorous Search:1:A pirate's keen sense for treasure sniffs out secret hideaways from defeated Smugglers; new lootable cargo is added:30:28:68
+Corsair's Eye:1:During a Blockade of a system, replace a risk card with a Merchant card:30:28:57
+Furious Prodding:1::60:28:-2
+Unlawful Loot:1:When attempting to access a Black Market, reroll a risk card:30:28:79
+Barrel Roll:5::30:28:-2
+Infamous Presence:5:During Blockade of a system, increase rewards by 10% + Intimidate Skill:60:28:58
+Terrifying Extortion:5:Frighten non-violent merchants into turning over their cargo in return for a promise of being unharmed at cost of Reputation loss:90:28:74
+Menacing Demeanor:8:When completing steps in a Mission using Intimidate Skill, your status as a known scoundrel mitigates your Reputation loss by up to Intimidate Skill:180:28:11
+Lethal Example:8:Outright killing the lowest Morale mutineer sets a cruel example and reminds the crew who is in charge. The mutiny ends and Morale of the entire crew is increased by 20 + Intimidate Skill:260:28:42
+Disabling Approach:11::30:28:-2
+Burner Skid:11:Infamous pirate maneuver, dangerous over-charging the engine for killing power:30:28:-2
+Unwavering Attention:1:Prevent Navigation Failures.:30:29:9
+Steadfast Aim:1::1:29:-1
+Abiding Death:1:Price for death warrant Edict is discounted by 10% + Intimidate Skill:30:29:33
+Lethal Trap:1::1:29:-1
+Tireless Pursuit:5::30:29:-2
+Hunter's Challenge:5::10:29:-1
+Unfaltering Ire:5::10:29:-1
+Blood Game:1:In Ship Combat, always allows a boarding attempt at range 1 to 3; only allows an attempt at range 4 or 5 during Mission battles as the hunter tracks their prey:60:29:-2
+Sustained Fire:8::1:29:-1
+Resolute Hound:8::8:29:-1
+Frag Grenade:11::16:29:-1
+Shredding Shots:11::1:29:-1
+Expert Planning:1:Prevent Tactics Failures.:30:30:5
+Power Play:1:When completing steps in a Mission, increase Faction Reputation bonuses by Charisma %:90:30:11
+Leader in the Ranks:5::12:30:-1
+Militant Patrol:1:When Patrolling a system, increase rewards by 10% + Command Skill:60:30:56
+Stiff Salute:1:When encountering a hostile Military Officer or Zealot Captain, a respectful military salute automatically ends the encounter with a Draw; Reputation penalties may still apply:90:30:71
+Tactical Edge:1::6:30:-1
+Deserving Rank:5:Price for military Rank is discounted by 10% + Command Skill:30:30:31
+Commanding Sweep:5:When Patrolling a system, replace a card with a Reputation bonus or a Conflict Influence in the case of a Conflict:30:30:55
+Recruiter's Eye:5:When Recruiting, new crew member gains improved Attributes and you discover one of their hidden Traits.:30:30:13
+Overriding Discipline:8::60:30:-2
+Military Discipline:8:Barked orders and rigid authority can snap a mutiny in seconds. The mutiny ends and Morale of entire crew is increased by 10 + Command skill:260:30:42
+Incite Victory:11::30:30:-2
+Boarding Rush:11::0:30:29
+Gut Instinct:1:Prevent Explorer Failures.:30:31:26
+Vigilant Search:1:When Exploring a Wild Zone, reroll any card:30:31:51
+Plentiful Rewards:1:When Exploring a Wild Zone, increase reward by 10% + Explore Skill:60:31:52
+Far Voyager:1:An expert rover knows the ins and outs of the Hyperwarp, reduces fuel cost by 2 + Explore Skill:30:31:35
+Unseen Traces:5:When landing in a Wild Zone, 10% + Explore Skill chance of discovering traces of a Contact who has operatives working in the area:130:31:47
+Reduced Exposure:5:When Exploring a Wild Zone, remove a risk card:30:31:51
+Artifact Profiteer:5:When selling Xeno Artifacts, increase the profit of the deal by 25% + Explore Skill:90:31:37
+Makeshift Repairs:5:Upon landing in a Wild Zone, automatically repair damage to 2 Ship Components equal to Richness rating up to Explore Skill:130:31:47
+Dredge Artifacts:8:Pick over the wreck of a destroyed xeno ship to recover a number of Artifacts up to your Explore Skill:60:31:67
+Face the Terror:8:When encountering a xeno ship in space combat, prevents Morale loss on up to Explorer Skill number of crew:60:31:19
+Legacy Seeker:8:When Exploring a Wild Zone, replace a risk with a reward card:30:31:51
+Digging Deeper:11:When Exploring a Wild Zone, increase all resource or artifact rewards by 30% + Explorer Skill:60:31:52
+Tag the Beast:11:Experienced explorer knows how to stay one step ahead:90:31:-2
+Deft Control:5:Prevent Electronics Failures.:30:32:3
+Sly Move:1:Prevent Stealth Failures.:30:32:25
+Bolt:5::30:32:-2
+Espionage Sweep:1:When Spying in the orbit of a system, remove a risk card:30:32:53
+Distracting Shots:5::1:32:-1
+Scouring Search:5:When Spying in the orbit of a system, replace a risk card with an Intel Records reward card.:30:32:53
+Disappearing Act:1::8:32:-1
+Close Observation:1:Sharp scrutiny grants Wisdom % to reveal a Contact's hidden Traits during any interaction where money changes hands:180:32:34
+Shadowed Fire:1::1:32:-1
+Data Haul:8:Increases price for sold Intel Records by 10% + Electronics Skill. Contact Influence gains or losses increased by Charisma %:30:32:82
+High Stakes:11:When Spying in the orbit of a system, increase all Intel rewards by 30% + Electronics Skill:60:32:54
+Secrets Unbound:11:Upon landing in an Urban Zone, 10% + Electronics Skill chance to gather Intel Records about the local Faction:130:32:15
+Attentive Overhaul:1::30:33:6
+Unrivaled Patch:1::60:33:-2
+Brace for Impact:1::30:33:-2
+Port Maintenance:1:Upon landing, automatically repairs damage to 2 to 4 Ship Components equal to 10% up to Repair skill:130:33:15
+Boarder's Demolition:5:rig an explosion which leaves the enemy ship vulnerable to continued attack:90:33:77
+Assisted Installation:5:Discounts any upgrade of a ship component at the Starport by 10% + Repair Skill:30:33:44
+Overclocked Reactor:5::30:33:-2
+Warfare Patch:5:In the aftermath of a victorious ship battle, repair damage to multiple Ship Components equal to 10% + Repair Skill:60:33:83
+Stormhunter:8:Protects the ship and crew from damage when flying through Radiation Storms (quadrant) and Ion Storms (system) while granting additional Experience reward:60:33:20
+Perilous Study:11:When encountering a xeno ship, rapid analysis of the ship's scanner data reveals new findings about the xeno and grants additional Experience reward:30:33:19
+Unforeseen Discovery:11:When Exploring a Wild Zone, replace a risk card with a Experience bonus card:90:33:51
+Watchful Eye:1:Prevents Ship Ops failures.:30:34:1
+Stern Leader:1:Prevents Command failures.:30:34:7
+Perceptive Boss:1:When paying your crew, your intuition grants a 30% + Command Skill chance to learn hidden Trait from among your crew:90:34:21
+Rallying Cry:5::60:34:-2
+Hard Bargain:8:When buying a new ship, gain a discount up to Repair Skill with maximum of 15%:30:33:45
+Contract Bargain:1:When landing in a zone, the highest level crew member who attempts to abandon the ship reconsiders, but their salary increases by $2:30:34:41
+Reliable Hand:5:When accepting a Mission, increases payment by 10% + Intimidate Skill:30:34:10
+Calming Speech:5:Speaking as a leader but also as a member of the crew, the quartermaster knows what to say. The mutiny ends and Morale of the entire crew is increased by 20 + Command skill:130:34:42
+Welcoming Conscription:8:When conscripting enemy to serve in your crew after a ship victory, new crew member starts with higher Morale and does not gain new negative Traits:30:34:84
+Call to Arms:8:When encountering a xeno ship in space combat, prevents Morale loss on up to Intimidate Skill number of crew:60:34:19
+Second Shadow:11:Watching crew like a hawk, saves a life during ship combat, blockade, spying, patrol or black market. Crew member is restored to HP equal to Command Skill + 3 x Medical Rating of onboard medical components:90:34:49
+Regimented Order:11::60:34:-2
+Safety Protocols:1:Prevent Ship Ops Failures.:30:1:1
+Talk in the Hall:5:When passing the Spice plate in the Hall, affable talk uncovers a new Rumor:30:1:18
+Failsafe Protocols:1::60:1:-2
+Methodical Sweep:1:When Patrolling a system, reroll a risk card:30:1:55
+Relaxing Leave:1:When passing the Spice plate in the Hall, grant all other revelers a Morale bonus equal to 30% of your Charisma:90:1:18
+Hawkish Siege:5:When Blockading a system, reroll a risk card:30:1:57
+Engine Lockdown:8:Routing reactor power to defenses and weaponry:90:1:-2
+Battle Damage Repair:8:In the aftermath of a ship battle, repair one Ship Component damage equal to 10% + Repair Skill:60:1:83
+Veteran Clarity:11::60:1:-2
+Careful Testing:1:Prevent Repair Failures.:30:2:6
+Discounted Repairs:1:Reduces cost of ship and small craft repair at a Starport by 10% + Repair Skill:30:2:43
+Engine Precision:1::30:2:-2
+Orchestrated Salvage:1:Salvage the wreck of a destroyed ship for valuable scrap, add 10% + Repair Skill to your profits and repair equal % of your own Hull :30:2:67
+System Flush:5::60:2:-2
+Thrown Wrench:5:sabotages components to cause a ripple effect of damage and death:90:2:77
+Helpful Hands:8:Discounts any upgrade of a ship component at the Starport by 10% + Repair Skill:30:2:44
+Rushed Patches:8::60:2:-2
+Reactor Surge:11::30:2:-2
+Hotwire:1:Prevent Electronics Failures.:30:3:3
+Alert Scanner:1:Upon entering the orbit of a new system, 10% + Electronics Skill chance to learning a Rumor:90:3:39
+Signature Jammer:1:Masks ship's signal to prevent identification. When ending a ship encounter in a draw, reduce possible Reputation damage by up to Electronics Skill:30:3:64
+Storm Shielding:1:Protects the ship and crew from damage when flying through Radiation Storms (quadrant) and Ion Storms (system) by redirecting and modulating ship shielding:20:3:20
+Wide Sweep:5:When Spying in the orbit of a system, reroll a risk card:30:3:53
+Static Talks:5:When Spying in the orbit of a system, learn a Rumor when scoring a positive result:90:3:54
+Vigilant Scanners:8::30:3:-2
+Listening Post:8:Upon landing in an Urban Zone, 10% + Electronics Skill chance of learning about a new Contact by snooping on local transmissions:130:3:15
+Boosted Shields:11::30:3:-2
+Meteor Defense:5:Reduces damage caused to your ship and crew from a Meteor Storm in orbit of a system by up to Gunnery Skill:20:4:46
+Raking Fire:1:Softening your target increases the damage of every additional hit:30:4:-2
+Targeting Lock:1:Once a lock is established, your enemy is less likely to escape:30:4:-2
+Loot Armory:1:As an expert in military hardware, looting a captured vessel repairs up to 3 of your Ship's Weapon Components by 10% + Gunnery Skill:60:4:66
+Supremacy of Firepower:5:When Patrolling a system, remove a risk card:30:4:55
+Twitchy Trigger:8:When Blockading a system, remove a risk card:30:4:57
+Disarming Sabotage:5:ruthless sabotage disables the highest level enemy weapon, causing 80% damage:90:4:77
+Scattershot:8::30:4:-2
+Firing Orders:11::30:4:-2
+Read Charts:1:Prevent Navigation Failures.:30:16:4
+Fast Getaway:1:Rapid Navigation calculations make for a quick escape:30:16:-2
+Efficient Route:1:Methodical planning of Hyperwarp Jumps reduces fuel cost by 4 + Navigation skill:30:16:35
+Orderly Drop:5:Lands efficiently in a zone, reduces operation time to 1 Turn and Fuel Cost to 1:30:16:63
+Storm Navigator:1:Astute and careful direction from the helm protects the ship and crew from damage when flying through Radiation Storms (quadrant) and Ion Storms (system) :20:16:20
+Distant Commission:8:When accepting a Mission that requires more than 4 Hyperwarp jumps, increase payment by 3% bonus per jump, to a maximum of 30% bonus:30:16:10
+Perfected Approach:5:Faultless tracking of the enemy allows rapid closing:30:16:-2
+Talk of Far Worlds:8:When on spice leave in the hall, talk of distant worlds grants a 10% + Navigation Skill chance for an introduction to a new Contact:130:16:18
+Skip Off the Void:11:Uses a short-burst of the hyperwarp drive to 'bounce' a short distance and escape ship combat. Causes 30-60% Damage to the drive, mitigated by Navigation Skill and burns Fuel equal to a hyperwarp jump:90:16:70
+Ferocity:1::0:5:29
+Burst Fire:1::2:5:-1
+Discipline:1::6:5:-1
+Suppressing Fire:1::1:5:-1
+Backline Leader:5::10:5:-1
+Covering Fire:5::1:5:-1
+Full Auto:8::2:5:-1
+Concussion Grenade:8::16:5:-1
+Fearsome Charge:11::1:5:-1
+Close-Range Barrage:1::1:6:-1
+Pinning Shot:1::1:6:-1
+Raining Steel:1::0:6:29
+Fading Shot:1::1:6:-1
+Aimed Focus:1::6:6:-1
+Tricky Gunplay:5::2:6:-1
+Dueler's Stance:5::6:6:-1
+Terrifying Accuracy:8::1:6:-1
+Advancing Front:8::1:6:-1
+Rapid Fire:11::2:6:-1
+Rash Courage:1::6:8:-1
+Bravery Line:1::0:8:29
+Sharp Counter:1::3:8:-1
+Balanced Blade:1::3:8:-1
+Slashing Retreat:1::1:8:-1
+Skewering Thrust:8::2:8:-1
+Strength of Steel:5::6:8:-1
+Devastating Charge:5::3:8:-1
+Bladesman Rally:8::6:8:-1
+Blade and Hilt:11::2:8:-1
+First Aid:1:Prevents Doctor Failures.:30:11:8
+Bio-Poison Slugs:1::1:11:-1
+E-Suture:1::12:11:-1
+Cleansing Purge:1::10:11:-1
+Vaccination Watch:5::12:11:-1
+Toxin Terror:5::12:11:-1
+Lifeline:8::12:11:-1
+Flatline:8::14:11:-1
+Snakebite:11::1:11:-1
+Medical Staff:1:Prevent Doctor Failures.:30:12:8
+Treat Wounded:1::60:12:-2
+Field Surgery:1::10:12:-1
+Life Saver:5:Saves a life during ship combat, blockade, spying, patrol or black market. Crew member is restored to HP equal to Doctor Skill + 3 x Medical Rating of onboard medical components:90:12:49
+Assisted Care:1:Reduces the price for medical care at the Doctor by 10% + Doctor Skill:30:12:81
+Medical Ward:5:Upon defeating an enemy ship, heal 3 crew, or up to (Medical Rating x 3) on ships with advanced medical facilities. Each patient gains 10 + Doctor Skill in HP:60:12:83
+Generous in Service:8:If ship's Medical Rating exceeds zone's Economy Rating, free medical care to citizenry gains Rep up to Medical Rating but max 10 with diminishing returns above 40 Rep:130:12:15
+Voice of Reason:8:A ship's crew loves a good doctor, and a calm voice of reason can calm angry minds. The mutiny ends and Morale of entire crew is increased by 10 + Doctor skill:260:12:42
+Solace in Battle:11::60:12:-2
+Settlement:1:Prevents Negotiate Failures.:30:13:24
+Winning Compromise:1:When accepting a Mission, increases your payment for every step in a Mission by 10% + Negotiate Skill:30:13:10
+Silver Tongue:1:Price for military Rank is discounted by 10% + Negotiate Skill:30:13:31
+Expose Quality:1:Empathetic sense grants Wisdom % chance to reveal a Contact's hidden Traits during any interaction where money changes hands:180:13:34
+Hand that Feeds:5:When paying your crew, increase Morale bonus for those paid. Any Morale penalty for any unpaid crew is reduced:30:13:21
+Upstaged Success:5:When completing steps in a Mission, increase Contact Reputation and Influence bonuses by Charisma %:90:13:11
+Magnanimous Victory:8:Forgiving and charitable even in victory over another ship, negates Reputation damage up to your Negotiate Skill:60:13:66
+Legal Pressure:8:Increase profit when ransoming defeated ship back to their faction by 20% + Intimidate Skill at the cost of 0-2 extra Rep loss:90:13:87
+Political Hooks:11:Increase Conflict Score bonus by 10% + Faction Rank when impacting a Conflict through Missions, Spying, Blockade or Patrol:30:13:88
+Scout's Intuition:1:Prevents Explorer Failures.:30:18:26
+Burrowing Shots:5::3:18:-1
+Persistent Search:1:When Exploring a Wild Zone, increase reward by 10% + Explore Skill:60:18:52
+Bio-Agent Flechette:1::1:18:-1
+Keen Senses:5:When Exploring a Wild Zone, reroll any card:30:18:51
+E-Shock Grenade:8::16:18:-1
+Aggressive Advance:1::1:18:-1
+Steady Mobility:1::1:18:-1
+Plas-Charge Slugs:11::1:18:-1
+Know Thy Enemy:8::1:18:-1
+Famous Fury:1:Prevents Intimidate failure.:30:15:9
+Righteous Rank:1:Price for military Rank is discounted by 10% + Command Skill:30:15:31
+Rough Interrogation:1:Upon victory in ship combat, thoroughly questioning the enemy crew creates up to your Intimidate Skill in Intel Records but causes further Rep loss:90:15:66
+Unbending Law:1:When landing in a zone, the highest level crew member who attempts to abandon the ship reconsiders, but their salary increases by $2:30:15:41
+Fanatical Siege:5:During a Blockade of a system, replace a risk card with a Tithe or Influence Conflict reward card:30:15:57
+Obsessive Defense:5:When Patrolling a system, replace a card with a Pirate reward card:30:15:55
+Fervor:8::6:15:-1
+Retribution Justice:5:Increase Conflict Score bonus by 10% + Faction Rank when impacting a Conflict through Missions, Spying, Blockade or Patrol:30:15:88
+Infliction Rage:11::0:15:29
+Faked Signature:5:Confusing or forged credentials are enough to throw even the most dogged pursuer; can be used to reduce the hostility of Bounty Hunters:30:27:73
+Counterfeit Identity:8:Confusing or forged credentials are enough to throw even the most dogged pursuer; can be used to reduce the hostility of Bounty Hunters:30:32:73
+Blackheart Fraud:8:Confusing or forged credentials are enough to throw even the most dogged pursuer; can be used to reduce the hostility of Bounty Hunters:30:28:73
+Strict Search:1:Military discipline demands a thorough search, which uncovers secret hideaways on ships of defeated Smugglers; new lootable cargo is revealed:90:30:68
+Refocus:100:Ends Turn and restores HP and Morale. Restoration amount diminishes each Turn.:16:0:-1
+Buzzing Wires:1:When attempting to access a Black Market, remove a risk card:30:3:79
+Acrobatic Dive:5::30:28:-2
+Clink of Credits:11:When Spying in the orbit of a system, replace a risk card with a Credit Skim or Score reward card:30:3:53
+Devoted Service:1:When completing steps in a Mission, increase Faction Reputation bonuses 10% + Command Skill:90:15:11
+Signature Homing:1:Closing in and locking on makes it hard to dodge your fire:30:4:-2
+Cloak and Dagger:11:When Spying in the orbit of a system, replace a risk card with an Mission Success reward card:30:32:53
+Driven Prospector:11:When Exploring a Wild Zone, replace a risk with a Mission Success reward card:30:31:51
+Terror of the Skies:11:During a Blockade of a system, replace a risk card with a Mission Success reward card:30:28:57
+Guardian Vigil:11:When Patrolling a system, replace a risk card with Mission success reward card:30:30:55
+Diehard Defense:11:When Patrolling a system, replace a risk card with Mission success reward card:30:15:55
+Artifact Hunter:11:When Exploring a Wild Zone, replace a risk card with an Artifacts reward card; however there is a Danger-based chance to draw Artifacts guarded by xeno card instead:90:18:51
+Sneak Attack:8::1:32:-1
+Close Blast:1:Auto-granted attack for carring a Snubber:1:0:-1
+Precision Shot:1:Auto-grantedattack  for carring a Sniper Rifle:1:0:-1
+Steely Authority:8::12:30:-1
+Killer's Aim:11::6:32:-1
+Unstoppable Force:1::6:15:-1
+Bloodletting Blow:5::1:15:-1
+Bio-Poison Grenade:5::16:11:-1
+Roaring Barrels:1::1:5:-1
+Frontline Brave:8::12:5:-1
+Bombardment:1:Under continual attack an enemy ship struggles to return fire:30:4:-2
+Boarding Assault:1:In Ship Combat, allows a boarding attempt from range 3 or below as gunners give heavy covering fire to assault shuttle:60:4:-2
+Bio-Agent Bomb:5:release deadly bio-agents into the enemy ship's ventilation:90:11:77
+Warm Invitation:5:Discount price of Contact Introductions by 10% + Negotiate Skill:30:13:91
+Exacting Design:1:Prevent Tactics Failures.:30:16:5
+Ferocious Crossfire:5:sprays the corridor and decks with hexshell fire and leaves a trail of wounded; 4 enemy crew suffer 30-50 Damage:90:5:77
+Call for Surrender:5:demand for quick surrender cause 4 enemy crew to suffer Morale loss up to 30 + Tactics Skill:90:30:77
+Blowback:5::1:5:-1
+Unauthorized Access:5:breaks into the enemy ship's data banks and steals up to Electronics Skill in Intel Records:90:32:77
+Summary Execution:8:Capital punishment of the lowest Morale mutineer quickly reminds the crew who is in charge. The mutiny ends and Morale of the entire crew is increased by 20 + Intimidate Skill:260:15:42
+Engine Reboot:5::90:2:-2
+Ordnance Overhaul:8::90:2:-2
+Red Badge:5:When completing steps in a Mission and bearing an Edict of the sponsoring Faction, your fearsome prestige reduces your Reputation loss by up to Intimidate Skill:180:29:93
+Honorable Release:8:Increase profit when ransoming defeated ship back to their Faction by 10% + Command Skill, plus Wisdom % chance to gain small Reputation bonus:90:30:87
+Slippery Trader:5:When trading into a Trade Ban or War, reduces the Rep penalty by 30% + double Negotiate Skill:90:27:96
+Flash Fury:5::1:8:-1
+Plas-Punch:1::1:0:-1
+Bullet Trace:1::1:7:-1
+Vanishing Act:1::8:7:-1
+Dominant Eye:1::0:7:29
+Target Acquired:1::0:7:29
+Eagle Eye:5::8:7:-1
+Staggering Hit:5::3:7:-1
+Crafty Twist:5::50:7:25
+Unseen Fear:8:Threat of a hidden sniper sows terror among those in the open. :12:7:-1
+Parting Gift:8:fires one final shot with deadly accuracy and kills an unlucky target; one enemy crew member dies:90:7:77
+One-Shot:11::2:7:-1
+Smoke Bomb:1::12:10:-1
+Hitman Rush:1::0:10:29
+First Blood:1::0:10:29
+Venomous Blade:1::1:10:-1
+Never There:5::50:10:25
+Gliding Advance:5::8:10:-1
+Fatal Blow:5::3:10:-1
+Targeted Killing:8:a fleeting shadow moves among the enemy crew killing an unlucky target; one enemy crew member dies:90:10:77
+Arterial Slash:8::1:10:-1
+Death Among Shadows:11::8:10:-1
+Dissection:11::2:10:-1
+Murderous Tribute:15:Seize a defeated enemy ship during a Conflict at a local prize court (limited ship types by Conflicts). Requires Military Rank or Edict and a tithe of 40% of the ship's value but strike a blow in the Conflict, losing 75 Reputation with the enemy:360:28:97
+Fanatical Court:15:Seize a defeated enemy ship during a Conflict at a local prize court (limited ship types by Conflicts). Requires Military Rank or Edict and a tithe of 65% of the ship's value but strike a blow in the Conflict, losing 40 Reputation with the enemy:360:15:97
+Military Tribunal:15:Seize a defeated enemy ship during a Conflict at a local prize court (limited ship types by Conflicts). Requires Military Rank or Edict and a tithe of 75% of the ship's value but strike a blow in the Conflict, losing 30 Reputation with the enemy:360:30:97
+Antidote:8::6:10:-1
+Gut the Leadership:15:whirling shade strikes down an enemy leader; one enemy officer dies. If there is no officer to take the hit, the enemy Captain takes up to 30 + Stealth Skill Dmg:180:10:77
+Unstoppable Hunt:15:When Exploring a Wild Zone, reroll all 5 cards and draw a new hand:210:31:51
+Incorrigible Sneak:15:When attempting to access a Black Market, reroll all 5 cards and draw a new hand:210:27:79
+Enduring Defender:15:When Patrolling a system, reroll all 5 cards and draw a new hand:210:15:55
+Rampant Theft:15:When Spying in the orbit of a system, reroll all 5 cards and draw a new hand:210:32:53
+Unbridled Raider:15:During a Blockade of a system, reroll all 5 cards and draw a new hand:210:28:57
+Stalwart Loyalist:15:When Patrolling a system, reroll all 5 cards and draw a new hand:210:30:55
+Adept Mediation:5:When completing steps in a Mission using Negotiation Skill legally (not bribes), your careful mediation mitigates your Reputation loss by up to Negotiation Skill:180:13:11
+Stealth Op:5:When completing steps in a Mission with Stealth Skill, your carefully established cover mitigates your Reputation loss by up to Stealth Skill:180:32:11
+Raider's Scrutiny:1:Experienced pirates can spot the slightest signs and anomalies in an arc scanner reading, identifying how many units of raw, manufactured and rare cargo a ship is carrying:90:28:70
+Dubious Handshake:1:When encountering a Smuggler Captain, a subtle greeting among criminals ends the encounter in a peaceful Draw; 30% + Negotiation chance to learn a new Rumor:120:27:103
+Pick Clean:1:While Salvaging at an Orbital, increase cargo rewards by 10% + Explore Skill:60:19:102
+Artful Solder:1:Prevent Repair Failures.:30:19:6
+Calculated Search:1:While Salvaging at an Orbital, reroll a risk card:30:19:101
+Diamond in the Debris:1:When Exploring a Wild Zone, increase reward by 10% + Explore Skill:60:19:52
+Careful EVA:5:While Salvaging at an Orbital, remove a risk card:90:19:101
+Picky Looters:5:While Salvaging at an Orbital, replace a risk card with a credit-bearing Salvage card:90:19:101
+Light-Foot Tracker:5:When Exploring a Wild Zone, remove a risk card:30:19:51
+Cascading Destruction:5:rapidly sabotaging a nearby component causes 40% + Repair Skill in damage:130:19:77
+Patchwork :8:When Exploring a Wild Zone, replace a risk card with a Ship Repairs card:60:19:51
+Dogged Treatment:8:Prevent Doctor Failures.:60:19:8
+Rescue Mission:11:While Salvaging at an Orbital, replace a risk with a Mission Success reward card:30:19:101
+Scrappy Recovery:11:When Exploring a Wild Zone, replace a risk card with a Scrappy Healing card:30:19:51
+Master Reclamation:15:When Salvaging at an Orbital, reroll all 5 cards and draw a new hand:210:19:101
+Redemption Purge:8::60:19:-2
+Recovery Plan:1:While Salvaging at an Orbital, reroll a risk card:60:1:101
+Scrap Procedures:5:While Salvaging at an Orbital, increase credit rewards by 20% + Repair Skill:60:1:102
+Weakened System:5:While Salvaging at an Orbital, increase credit and Intel rewards by 10% + Electronics Skill:60:3:102
+Orbital Guard:5:While Salvaging at an Orbital, remove a risk card:60:4:101
+Prowling the Void:8:While Salvaging at an Orbital, increase any Reputation rewards by 10% + Gunnery Skill:60:4:102
+Repurposed Parts:5:While Salvaging at an Orbital, replace a risk card with a Ship Repairs card:90:2:101
+Entropic Estimate:1:While Salvaging at an Orbital, predicts the time remaining on the orbital salvage Rumor:180:2:102
+Astounding Find:8:While Salvaging at an Orbital, replace a risk card with a Experience Bonus card:60:33:101
+Nose for Loot:8:While Salvaging at an Orbital, replace a risk card with a Rare Trade Loot card:130:28:101
+Light-Fingers:8:While Salvaging at an Orbital, increase cargo rewards by 10% + Stealth Skill:60:27:102
+Flash Charge:15:Uses a short hyperwarp burst to charge an enemy ship; start battle at Range 4 or 3 based on an Engine Agility test. Causes 5-15% Damage to the drive and burns Fuel equal to a 25% of a hyperwarp jump:90:16:70
+Rarest Find:11:When Exploring a Wild Zone, replace a risk card with an Rare Trade Goods reward card; however there is a Danger-based chance to draw Rare Trade Goods guarded by pirates instead:90:31:51
+Cold-blooded Threats:8:threats of merciless reprisal cause 3 enemy crew to suffer Morale loss up to 40 + Intimidate Skill:130:29:77
+Silent Executioner:5:Price for death warrant Edict is discounted by 10% + Stealth Skill:30:10:33
+Trick of the Eye:15::0:7:29
+Daunting Presence:1:Prevent Intimidate Failures.:30:20:9
+Unflinching Risk:1:When Exploring a Wild Zone, reroll any card:30:20:51
+Here Be Monsters:5:When Patrolling a system, replace a card with a dreaded Xeno Ship card:30:20:55
+Irid-Laced Resolve:1::0:20:29
+Grenade Launch:1::16:20:-1
+Macabre Harvest:5:Upon victory in crew combat against xeno, xenobiological expertise allows harvesting a number of Xeno Artifacts up to Explorer Skill:90:20:78
+We The Hunters:1:When encountering a xeno ship in space combat, prevents Morale loss on up to Intimidate Skill number of crew:60:20:19
+Blooded Lure:1:When Exploring a Wild Zone, replace a risk card with a dreaded Xeno card with an Explorer Skill chance draw Artifacts guarded by xeno card instead:30:20:51
+Unfailing Stand:5::10:20:-1
+Puncture Points:5::1:20:-1
+Death Haunt:8::12:20:-1
+Plasma Burner:8::2:20:-1
+Soul Piercer:8:When Recruiting, new crew member gains improved Attributes and you discover one of their hidden Traits.:30:20:13
+Triumphant Predator:11:Upon victory in ship combat against xeno, mastery over the void's terrors restores 10 + up to Intimidate Skill Morale to every crew member:180:20:105
+Eradication Prize:15:When salvaging a destroyed xeno ship in the void, gain 30% + Explorer Skill bonus to Experience, Rep and credit gains:180:20:106
+Exalted Hunter:11:When accepting a Mission to hunt xeno, increases payment by Charisma + Intimidate Skill % in addition to bonuses from standard Mission Talents:90:20:10
+Flawless Reset:15::90:2:-2
+All The Power:15:Routing more power to the void reactor to escape:90:33:-2
+Elusive Barrage:1:Well-aimed shots prevent pursuit:90:4:-2
+Whirling Blade:1::3:25:-1
+Breakneck Assault:1::2:25:-1
+Breacher's Assault:1:Launch a Shuttle craft with a 4 Turn flight plan (close, board, retreat, land) to make a boarding run against the enemy ship:0:25:113
+Trapped Compartments:1:deadly devices brought from the Shuttle and hidden within the ship surprise, maim and kill:90:25:77
+Scrambled Authorization:5:When accessing a Black Market as the pilot of a Shuttle craft, replace a risk card with Market Access 2 to 4:30:25:79
+Launchpad Spike:1:attacking a carrier's hangers and bays damages all landed craft up to 20% + Pilot Skill of their max hull:90:25:77
+Knife Work:5::12:25:-1
+Behind Enemy Lines:5:clever sabotage disables best enemy weapon, causing 80% Damage:90:25:77
+Ripcord:8:When fighting in a boarding combat as the pilot of a Shuttle craft, make a quick escape to your shuttle and exit combat immediately, leaving any other squad members behind:10:25:-1
+Boarder's Storm:8:Launch a Shuttle craft with a 4 Turn flight plan (close, board, retreat, land) to make a boarding run against the enemy ship:0:25:113
+Predictive Intel:11::0:25:29
+Grandiose Arrival:11:When completing Mission steps that pick up or drop off a new Passenger or Prisoner on an urban zone, gain up to 20% + Pilot Skill profit:180:25:11
+Bombing Run:1:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:113
+Hull Buster:1:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:113
+Vanguard Scan:1::30:35:-2
+Synchronized Strikes:1::30:35:-2
+Ensnare:1:When Blockading a system as the pilot of a Bomber craft, remove a risk card:30:35:57
+Explosive Screen:1:Reduces damage caused to your ship and crew from a Meteor Storm in orbit of a system by up to Electronics Skill:20:35:46
+Shutter Strike Pattern:5:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:113
+PX Incendiary Payload:5:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:113
+Intimidating Fly Over:5:When completing Mission steps in an urban zone, increase faction Reputation bonuses 20% + Pilot Skill with a chance add -1 Rep loss with local faction:90:35:11
+Ruthless Destruction:5:Bombing a disabled ship into complete oblivion increases both credit and Solar War Rep rewards from destroy and salvage by 10% + Electronics Skill:30:35:66
+Deliberate Destruction:8:While Salvaging at an Orbital as the pilot of a Bomber craft, replace a risk card with Bombed Salvage card (20-40K credits). If used on a Orbital Construction or Disaster Rumor, drawing Bombed Salvage causes 2-4 Rep loss:90:35:101
+Alarming Pass:8:When Blockading a system as the pilot of a Bomber craft, increase all credit rewards by 20% + Electronics:90:35:58
+Havoc Burst Pattern:11:Launch a Bomber craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a bombing run against the enemy ship:0:35:113
+Aegis Pattern:1:Launch an Interdictor craft with a 3 Turn flight plan to defend against enemy craft and shoot down up to one Missile or Torpedo a Turn:0:36:113
+Strafing Run:1:Launch a Interdictor craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a attack run against the enemy ship:0:36:113
+Protective Escort:1::10:36:-2
+Bolstering Fly-By:1::30:36:-2
+Unexpected Swoop:1:When Patrolling a system as the pilot of an Interdictor craft, remove a risk card:30:36:55
+Precise Pursuit:5:Launch a Interdictor craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a attack run against the enemy ship:0:36:113
+Tip of the Spear:5:Launch an Interdictor craft with a 3 Turn flight plan to defend against enemy craft and shoot down up to one Missile or Torpedo a Turn:0:36:113
+Ransom Escort:5:Interdictor escort increases profit when ransoming defeated ship back to their Faction by 10% + Pilot Skill, plus Quickness % chance to gain small Reputation bonus:90:36:87
+Long Range Support:8:When Exploring a Wild Zone as the pilot of a Shuttle craft, increase rewards by 20% + Pilot Skill:90:25:52
+Extended Vigil:8:When Patrolling a system as the pilot of an Interdictor craft, increase rewards by 20% + Gunnery Skill:90:36:56
+Interdiction Swarm:11:Launch a Interdictor craft with a 4 Turn flight plan (close, bomb, retreat, land) to make a attack run against the enemy ship:0:36:113
+Screening Swarm:11:Launch an Interdictor craft with a 3 Turn flight plan to defend against enemy craft and shoot down up to one Missile or Torpedo a Turn:0:36:113
+X12 Interference:1::90:17:-2
+Void-Side Fix:1::30:17:-2
+Recovery Pod:1:When a craft is destroyed in ship combat, the pilot is saved and restored to HP equal to Doctor Skill + 3 x Medical Rating of onboard medical components:30:17:109
+Airtight Plan:1:Tactics save:30:17:5
+Fleet Maintenance:1:Reduces cost of ship and small craft repair at a Starport by 10% + Repair Skill:30:17:43
+Discounted Acquisition:5:Reduces cost of purchasing a new small craft by Repair Skill %:180:17:111
+Rapid Refurb:5:Whenever a craft would incur Maintenance Points, automatically prevents up to 1 Maintenance Point:30:17:112
+Unerring Calculations:5::30:17:-2
+Hanger Triage:8:In the aftermath of a victorious ship battle, repair hull of 2-3 small craft up to 10% + Repair Skill:30:17:83
+Weapons Hot:8::30:17:-2
+Sharp Wing:8::30:17:-2
+Emergency Grounding:11:Recalls and immediately lands all craft as first action regardless of the current progress of their flight plan:130:17:-2
+Long Patrol:8:While Salvaging at an Orbital as the pilot of an Interdictor craft, remove a risk card:90:36:101
+Cull the Chaff:8:When Recruiting the trained eye of a soldier spots the best, new crew member gains improved Attributes and you discover one of their hidden Traits:30:25:13
+Hostile Tribunal:15:Seize a defeated enemy ship during a Conflict at a local prize court (limited ship types by Conflicts). Requires Military Rank or Edict and a tithe of 50% of the ship's value but strike a blow in the Conflict, losing 60 Reputation with the enemy:360:25:97
+Knock From the Void:15:Overwhelming interference immediately forces one enemy craft to land regardless of the current progress of their flight plan:180:3:-2
+Swooping Marauder:5::90:28:-2
+ECM Surge:5::90:3:-2
+Hunt and Seek:8::90:3:-2
+Close-In Defenses:8::90:4:-2
+Lightning Lock:5::90:4:-2
+Peak Reactor Burn:15:In ship combat, increases the flight plan duration of all currently launched and defensive Interdictors:90:2:-2
+Inspiring Squadron:5::90:23:-2
+Jammer Warfare:5::90:16:-2
+Bullseye Certainty:1:Tactics save:30:4:5
+Pathfinder's Lead:11:Tactics save:30:16:7

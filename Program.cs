@@ -41,7 +41,7 @@ namespace STF_SQLExportToolsToPlanner
             StreamWriter talentPoints = new StreamWriter(@"talent_points.csv");
             talentPoints.WriteLine("Rank:Talents:LevelType");
 
-          //foreach ()
+            //foreach ()
             {
 
             }
@@ -73,11 +73,11 @@ namespace STF_SQLExportToolsToPlanner
             talentList.WriteLine("Name:Rank:Description:Cooldown:Job:Type");
 
             //iterate over filtered collection of rows, output text
-            foreach(var talent in db.Load<Talent>("SELECT * FROM Talent WHERE actionType > -1;"))
+            foreach(var talent in db.Load<Talent>("SELECT * FROM Talent;"))
             {
                 talentList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}",
                     talent.talentName, talent.jobLevel, talent.talentName2, talent.cooldown, 
-                    talent.jobType, talent.skillType);
+                    talent.jobType, talent.actionType);
             }
             talentList.Close();
         }
@@ -260,7 +260,7 @@ namespace STF_SQLExportToolsToPlanner
         public int jobType { get; set; }
         public string talentName2 { get; set; }
         public int cooldown { get; set; }
-        public string skillType { get; set; }
+        public string actionType { get; set; }
     }
 
     public class ShipWeapon

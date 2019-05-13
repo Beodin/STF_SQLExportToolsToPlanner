@@ -19,7 +19,6 @@ Imperator Plasma Artillery:3:140:90:0:3:3:6:25:40:3
 Commander PC-1:3:100:80:0:3:2:4:25:40:4
 MK Plasma Ordnance:3:150:110:0:3:3:5:25:40:5
 Commander Plasma Artillery:3:150:130:0:3:3:10:30:30:7
-Imperator PC-1:3:150:0:0:3:3:2:25:40:8
 Light Railgun:4:90:0:80:3:3:3:5:35:1
 Archangel Railgun:4:120:0:84:3:3:4:10:45:2
 Helios Railgun:4:120:0:90:3:3:6:20:45:3
@@ -48,8 +47,6 @@ Void-Lance Torpedo:7:30:0:80:5:3:11:5:65:4
 Inferno Torpedo:7:35:0:45:5:2:10:8:50:5
 Torpedo MK2-Alpha:7:40:0:90:5:3:14:10:60:6
 Torpedo Dual-Laced Array:7:35:0:45:5:2:14:8:50:7
-Direwarp Lance:2:160:20:0:2:2:2:15:55:1
-Doomdriver:3:116:22:0:3:2:1:15:40:1
 Lightspear Railgun:4:100:0:90:3:3:5:10:35:3
 Vector Missile System:6:140:30:0:4:3:8:30:15:3
 Blazelight Railgun:4:110:0:105:3:3:7:10:40:5
@@ -61,13 +58,3 @@ Obliterator PK-2:3:150:170:0:3:4:9:35:45:6
 Obliterator PKX-3:3:150:190:0:3:4:11:35:50:7
 Ruut 82 Gravcannon:5:300:0:0:2:4:3:40:40:5
 Ruut 84 Gravcannon:5:320:0:0:2:4:4:45:40:6
-Kados Bomb:9:160:40:0:0:0:0:15:30:1
-Shrieker Rockets:10:40:0:0:0:0:0:30:45:1
-Dolzimer Bomb:9:180:42:0:0:0:0:18:30:1
-Dusk X Rockets:10:45:0:0:0:0:0:30:50:1
-Farang Bomb:9:200:46:0:0:0:0:22:30:1
-Spotlight Rockets:10:50:0:0:0:0:0:30:55:1
-Crestan Bomb:9:240:50:0:0:0:0:22:32:1
-Predator Rockets:10:50:0:0:0:0:0:30:60:1
-Titus X Bomb:9:280:54:0:0:0:0:24:32:1
-Mesa Rockets:10:50:0:0:0:0:0:30:65:1

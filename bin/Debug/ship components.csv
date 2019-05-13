@@ -141,11 +141,8 @@ Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo
 "Barracks 5":5:2:325:0:0:0:0:0:0:0:36:0:0:0:0:0:0:0:0
 "Barracks 4":5:2:325:0:0:0:0:0:0:0:30:0:0:0:0:0:0:0:0
 "Barracks 6":5:3:650:0:0:0:0:0:0:0:42:0:0:0:0:0:0:0:0
-"Barracks 7":5:3:650:0:0:0:0:0:0:0:48:0:0:0:0:0:0:0:0
-"Barracks 8":5:3:650:0:0:0:0:0:0:0:54:0:0:0:0:0:0:0:0
 "Reinforced Officer Cabin":5:1:75:0:0:0:0:0:0:0:0:1:1:1:0:0:0:0:0
 "Reinforced Barracks 5":5:2:325:0:0:0:0:0:0:0:36:0:3:2:0:0:0:0:0
-"Reinforced Barracks 8":5:3:650:0:0:0:0:0:0:0:54:0:4:3:0:0:0:0:0
 "Reinforced Barracks 4":5:2:325:0:0:0:0:0:0:0:30:0:3:3:0:0:0:0:0
 "Reinforced Barracks 6":5:3:650:0:0:0:0:0:0:0:42:0:3:4:0:0:0:0:0
 "Officer Suites":5:2:275:0:0:0:0:0:0:0:0:2:0:0:0:0:0:0:0
@@ -157,13 +154,14 @@ Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo
 "Basic Medical Bay":6:2:325:0:2:0:2:0:0:0:0:0:0:0:0:0:0:0:4
 "Shielded Medical Chamber":6:1:125:0:3:0:3:0:0:0:0:0:0:0:0:0:0:0:2
 "Medical Bay":6:2:325:0:4:0:2:0:0:0:0:0:0:0:0:0:0:0:5
-"Advanced Medical  Ward":6:3:650:0:5:0:3:0:0:0:0:0:5:0:0:0:0:0:9
+"Advanced Medical Ward":6:3:650:0:5:0:3:0:0:0:0:0:5:0:0:0:0:0:9
 "Combat Medical Ward":6:3:650:0:5:0:3:0:0:0:0:0:5:2:0:0:0:0:8
 "Reinforced Medical Ward":6:3:650:0:5:0:3:0:0:0:0:0:5:4:0:0:0:0:8
 "Advanced Medical Bay":6:2:325:0:3:0:4:0:0:0:0:0:2:0:0:0:0:0:6
 "Medical Clinic":6:3:650:0:6:0:2:0:0:0:0:1:5:0:0:0:0:0:8
 "Advanced Medical Clinic":6:3:650:0:6:0:3:0:0:0:0:1:5:0:0:0:0:0:9
 "Combat Medical Clinic":6:2:325:0:3:0:2:0:0:0:0:1:5:1:0:0:0:0:6
+"Plague Ward":6:2:275:0:3:0:0:0:0:0:0:0:5:0:0:0:1:0:7
 "Launch Bay":7:3:650:0:0:0:0:0:0:0:0:0:10:0:25:0:0:1:0
 "Shielded Launch Bay":7:3:650:0:0:0:0:0:0:0:0:0:11:0:15:0:0:1:0
 "Micro Launch Bay":7:2:325:0:0:0:0:0:0:0:0:0:6:0:0:0:0:0:0
@@ -210,6 +208,8 @@ Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo
 "Hull Plating 5":8:3:605:0:0:0:5:0:0:0:0:0:12:3:0:0:0:0:0
 "Armored Bulkheads 5":8:1:150:0:0:0:0:0:0:0:0:0:8:5:0:0:0:0:0
 "Reinforced Structures 5":8:2:325:0:0:0:0:0:0:0:0:0:12:10:0:0:0:0:0
+"Hawk Mass Reducer 4":8:2:-290:2:1:0:0:0:0:0:0:0:5:0:0:0:0:0:0
+"Lion Mass Reducer 4":8:2:-290:0:1:0:2:0:0:0:0:0:5:0:0:0:0:0:0
 "Basic Hyperwarp Drive":9:2:200:0:0:0:2:6:0:0:0:0:14:0:0:0:0:0:0
 "Longhaul Hyperwarp Drive":9:2:200:0:0:0:3:8:0:0:0:0:10:0:0:0:0:0:0
 "Basic Hyperwarp Drive":9:2:225:0:0:0:3:10:0:0:0:0:18:0:0:0:0:0:0
@@ -255,8 +255,8 @@ Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo
 "Defense Pattern Matrix":12:1:125:2:2:0:3:0:0:0:0:0:2:0:0:0:0:0:0
 "Interlocking Sensor Matrix":12:1:125:0:0:2:3:0:0:0:0:0:2:0:0:0:0:0:0
 "Peak Velocity Matrix":12:2:350:2:2:0:2:0:0:0:0:0:2:0:0:0:0:0:0
-"Radi-Shield Pulse Booster":12:1:125:0:2:0:2:0:0:0:0:0:2:1:0:0:0:0:0
-"Void-Shield Pulse Booster":12:1:125:0:2:0:2:0:0:0:0:0:2:1:0:0:0:0:0
+"Radi-Pulse Booster":12:1:125:0:2:0:2:0:0:0:0:0:2:1:0:0:0:0:0
+"Void-Pulse Booster":12:1:125:0:2:0:2:0:0:0:0:0:2:1:0:0:0:0:0
 "Pilot Assist Module 2":12:1:125:5:2:0:0:0:0:0:0:0:0:0:0:0:0:0:0
 "Pilot Assist Module 3":12:1:125:6:3:0:0:0:0:0:0:0:0:0:0:0:0:0:0
 "Pilot Assist Module 4":12:1:125:7:3:0:0:0:0:0:0:0:0:0:0:0:0:0:0
@@ -281,11 +281,11 @@ Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo
 "Interlocking Sensor Matrix 2":12:1:125:0:0:2:3:0:0:0:0:0:2:0:0:0:0:0:0
 "Interlocking Sensor Matrix 3":12:1:125:0:0:3:3:0:0:0:0:0:3:0:0:0:0:0:0
 "Interlocking Sensor Matrix 4":12:1:125:0:0:3:4:0:0:0:0:0:4:0:0:0:0:0:0
-"Luxury Cabin":13:2:325:0:0:0:0:0:1:0:0:0:0:1:0:1:0:0:0
+"Luxury Cabin":13:2:325:0:0:0:0:0:5:0:0:0:0:1:0:1:0:0:0
 "Passenger Cabin":13:1:125:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0:0
 "Prison Cell":13:1:125:0:0:0:0:0:0:0:0:0:0:0:0:0:1:0:0
 "Prison Cellblock":13:2:325:0:0:0:0:0:0:0:0:0:0:0:0:0:3:0:0
-"Luxury Suites":13:3:500:0:0:0:0:0:1:0:0:0:0:0:0:3:0:0:0
+"Luxury Suites":13:3:500:0:0:0:0:0:5:0:0:0:0:0:0:3:0:0:0
 "Passenger Suites":13:2:325:0:0:0:0:0:0:0:0:0:0:0:0:2:0:0:0
 "Fuel Tank":14:2:325:0:1:0:2:0:0:0:0:0:0:0:40:0:0:0:0
 "Water-Fuel Reclamation":14:2:325:0:6:0:2:0:0:0:0:0:-2:0:12:0:0:0:0
