@@ -20,6 +20,7 @@ namespace STF_SQLExportToolsToPlanner
 
             using (var db = new SQLiteDatabase(path))
             {
+                MakeFile_ShipData(db);
                 MakeFile_TalentPoints(db); 
                 MakeFile_JobList(db);
                 MakeFile_StfEngineData(db);
@@ -27,12 +28,45 @@ namespace STF_SQLExportToolsToPlanner
                 MakeFile_SkillPerJobList(db);
                 MakeFile_TalentList(db);
                 MakeFile_ShipWeaponData(db);
+                MakeFile_SmallCraftList(db);
             }
         }
 
         public static string AddQuotes(string str)
         {
             return string.Format("\"{0}\"", str);
+        }
+
+        private static void MakeFile_SmallCraftList(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter smallCraft = new StreamWriter(@"smallCraft.csv");
+            smallCraft.WriteLine("Name:Description:Cost:Hull:Armor:Shields:Launch Fuel Cost:Pilot:Electronics:Gunnery:AP:Agile:Speed:Repair Cost:Chance to hit Ship:Chance to hit Craft:Dodge");
+
+            foreach (var craft in db.Load<SmallCraft>("SELECT * FROM SmallCraft;"))
+            {
+                smallCraft.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}",
+                    craft.craftName, craft.description, craft.cost, craft.maxHull, craft.craftArmor, craft.craftDeflection,
+                    craft.launchFuelCost, craft.skPilot, craft.skElectronics, craft.skGunnery, craft.baseActionPoints,
+                    craft.craftAgile, craft.craftSpeed, craft.repairCost, craft.baseToHitShip, craft.baseToHitCraft,
+                    craft.baseToDodgeHit);
+            }
+            smallCraft.Close();
+        }
+
+        private static void MakeFile_ShipData(SqlNado.SQLiteDatabase db)
+        {
+            //output the header
+            StreamWriter shipData = new StreamWriter(@"STF_Ship_Data.csv");
+            shipData.WriteLine("Ship:Current Mass:Max Mass:Price:Total Slots:Large:Mid:Small:Hull:Armour:" +
+                "Shield:Max Officers:Max Crew:Cargo:Engine:Speed:Agility:Fuel Cost:Fuel Tank:Fuel Range:Jump Cost:" +
+                "Pilot:Navigation:Ship Ops:Electronics:Gunnery:Tier");
+
+            foreach (var shipType in db.Load<ShipType>("SELECT * FROM ShipType;"))
+            {
+                //shipData.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}:{20}:{21}:{22}:{23}:{24}:{25}:{26}",);
+            }
+            shipData.Close();
         }
 
         private static void MakeFile_TalentPoints(SqlNado.SQLiteDatabase db)
@@ -363,5 +397,50 @@ namespace STF_SQLExportToolsToPlanner
         public int _id { get; set; }
         public int level { get; set; }
         public int levelType { get; set; }
+    }
+
+    public class ShipType
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string shipTypeName { get; set; }
+        public int baseMass { get; set; }
+        public int shipCost { get; set; }
+        public int smallSlots { get; set; }
+        public int mediumSlots { get; set; }
+        public int largeSlots { get; set; }
+        public int hullPoints { get; set; }
+        public int baseArmor { get; set; }
+        public int baseDeflection { get; set; }
+        public int maxOfficer { get; set; }
+        public int maxLifeSupport { get; set; }
+        public int maxCraft { get; set; }
+        public int baseFuel { get; set; }
+    }
+
+    public class SmallCraft
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string craftName { get; set; }
+        public string description { get; set; }
+        public int cost { get; set; }
+        public int maxHull { get; set; }
+        public int craftTypeId { get; set; }
+        public int shipWeaponId { get; set; }
+        public int craftArmor { get; set; }
+        public int craftDeflection { get; set; }
+        public int launchFuelCost { get; set; }
+        public int skPilot { get; set; }
+        public int skElectronics { get; set; }
+        public int skGunnery { get; set; }
+        public int baseActionPoints { get; set; }
+        public int craftAgile { get; set; }
+        public int craftSpeed { get; set; }
+        public int repairCost { get; set; }
+        public int maintCost { get; set; }
+        public int baseToHitShip { get; set; }
+        public int baseToHitCraft { get; set; }
+        public int baseToDodgeHit { get; set; }
     }
 }
