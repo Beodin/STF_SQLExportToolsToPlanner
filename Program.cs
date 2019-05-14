@@ -20,7 +20,7 @@ namespace STF_SQLExportToolsToPlanner
 
             using (var db = new SQLiteDatabase(path))
             {
-                MakeFile_TalentPoints(db); //Not sure what I'll need for this one. Also not sure if I can use query to see where value increases.
+                MakeFile_TalentPoints(db); 
                 MakeFile_JobList(db);
                 MakeFile_StfEngineData(db);
                 MakeFile_ShipComponents(db);
@@ -39,14 +39,91 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter talentPoints = new StreamWriter(@"talent_points.csv");
-            talentPoints.WriteLine("Rank:Talents:LevelType");
+            talentPoints.WriteLine("Rank:Talents");
 
-            //foreach ()
+            foreach (var tPoint in db.Load<CharLevel>("SELECT * FROM CharacterLevel;"))
             {
-
+                talentPoints.WriteLine("{0}:{1}", tPoint.level, addTalentPoint(tPoint.level, tPoint.levelType));
             }
 
             talentPoints.Close();
+        }
+
+        public static int addTalentPoint(int level, int levelType)
+        {
+            
+            if (levelType == 1)
+            {
+                switch (level)
+                {
+                    case 1:
+                    case 3:
+                    case 6:
+                    case 8:
+                    case 12:
+                    case 14:
+                    case 17:
+                    case 21:
+                    case 25:
+                    case 28:
+                    case 30:
+                    case 31:
+                    case 32:
+                    case 35:
+                    case 37:
+                    case 40:
+                        return 1;
+                    default:
+                        break;
+                }
+
+                return 0;
+            }
+            else if (levelType ==2) {
+                switch (level)
+                {
+                    case 1:
+                    case 3:
+                    case 6:
+                    case 8:
+                    case 12:
+                    case 14:
+                    case 17:
+                    case 21:
+                    case 25:
+                    case 28:
+                    case 30:
+                    case 32:
+                    case 34:
+                    case 37:
+                    case 40:
+                        return 1;
+                    default:
+                        break;
+                }
+
+                return 0;
+            }
+            else if (levelType == 3)
+            {
+                switch (level)
+                {
+                    case 1:
+                    case 6:
+                    case 11:
+                    case 15:
+                    case 17:
+                    case 21:
+                    case 25:
+                    case 32:
+                        return 1;
+                    default:
+                        break;
+                }
+
+                return 0;
+            }
+            return 0;
         }
 
         private static void MakeFile_ShipWeaponData(SqlNado.SQLiteDatabase db)
@@ -278,5 +355,13 @@ namespace STF_SQLExportToolsToPlanner
         public int critChance { get; set; }
         public int effectChance { get; set; }
         public int level { get; set; }
+    }
+
+    public class CharLevel
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public int level { get; set; }
+        public int levelType { get; set; }
     }
 }
