@@ -82,6 +82,82 @@ namespace STF_SQLExportToolsToPlanner
             talentPoints.Close();
         }
 
+        public static string jobTypeToString(int jType)
+        {
+            //Takes jobType and returns the string job name. 
+            //Should any new jobs be added they will need to be added to this otherwise the talent file will not associate the new talent with the new job.
+            switch (jType)
+            {
+                case 1:
+                    return "Crew Dog";
+                case 2:
+                    return "Mechanic";
+                case 3:
+                    return "Electronics Tech";
+                case 4:
+                    return "Gunner";
+                case 5:
+                    return "Soldier";
+                case 6:
+                    return "Pistoleer";
+                case 7:
+                    return "Sniper";
+                case 8:
+                    return "Swordsman";
+                case 10:
+                    return "Assassin";
+                case 11:
+                    return "Combat Medic";
+                case 12:
+                    return "Doctor";
+                case 13:
+                    return "Diplomat";
+                case 15:
+                    return "Zealot";
+                case 16:
+                    return "Hyperwarp Navigator";
+                case 17:
+                    return "Wing Tech";
+                case 18:
+                    return "Exo-Scout";
+                case 19:
+                    return "Scavenger";
+                case 20:
+                    return "Xeno Hunter";
+                case 23:
+                    return "Commander";
+                case 24:
+                    return "Pilot";
+                case 25:
+                    return "Wing Commando";
+                case 26:
+                    return "Merchant";
+                case 27:
+                    return "Smuggler";
+                case 28:
+                    return "Pirate";
+                case 29:
+                    return "Bounty Hunter";
+                case 30:
+                    return "Military Officer";
+                case 31:
+                    return "Explorer";
+                case 32:
+                    return "Spy";
+                case 33:
+                    return "Engineer";
+                case 34:
+                    return "Quartermaster";
+                case 35:
+                    return "Wing Bomber";
+                case 36:
+                    return "Wing Leader";
+                default:
+                    return "";
+            }
+            
+        }
+
         public static int addTalentPoint(int level, int levelType)
         {
             
@@ -187,7 +263,7 @@ namespace STF_SQLExportToolsToPlanner
             {
                 talentList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}",
                     talent.talentName, talent.jobLevel, talent.talentName2, talent.cooldown, 
-                    talent.jobType, talent.actionType);
+                    jobTypeToString(talent.jobType), talent.actionType);
             }
             talentList.Close();
         }
