@@ -58,13 +58,12 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter shipData = new StreamWriter(@"STF_Ship_Data.csv");
-            shipData.WriteLine("Ship:Current Mass:Max Mass:Price:Total Slots:Large:Mid:Small:Hull:Armour:" +
-                "Shield:Max Officers:Max Crew:Cargo:Engine:Speed:Agility:Fuel Cost:Fuel Tank:Fuel Range:Jump Cost:" +
-                "Pilot:Navigation:Ship Ops:Electronics:Gunnery:Tier");
+            shipData.WriteLine("Ship:Max Mass:Price:Small Slots:Medium Slots:Large Slots:Hull Points:Base Armor:Base Deflection:Max Officers:Max Life Support:Max Craft:Base Fuel");
 
             foreach (var shipType in db.Load<ShipType>("SELECT * FROM ShipType;"))
             {
-                //shipData.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}:{20}:{21}:{22}:{23}:{24}:{25}:{26}",);
+                shipData.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}",
+                shipType.shipTypeName, shipType.baseMass, shipType.shipCost, shipType.smallSlots, shipType.mediumSlots, shipType.largeSlots, shipType.hullPoints, shipType.baseArmor, shipType.baseDeflection, shipType.maxOfficer, shipType.maxLifeSupport, shipType.maxCraft, shipType.baseFuel);
             }
             shipData.Close();
         }
@@ -234,17 +233,220 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter skillPerJobList = new StreamWriter(@"skill_per_job_list.csv");
-            skillPerJobList.WriteLine("Job Type:Rank:Pistols:Rifles:Blades:Evasion:Tactics:Stealth:Gunnery:Pilot:Ship Ops:Repair:Electronics:Navigation:Doctor:Command:Negotiate:Intimidate:Explore:Job");
+            skillPerJobList.WriteLine("Rank:1-Name:1-Num:2-Name:2-Num:3-Name:3-Num:Job");
 
-            //iterate over filtered collection of rows, output text
-            foreach (var skillPerJob in db.Load<Job>("SELECT jobType, jobLevel, skLightFirearms, skHeavyFirearms, skMelee, skEvasion, skTactics, " +
-                "skStealth, skGunnery, skPilot, skShipOps, skRepair, skElectronics, skNavigation, skDoctor, skCommand, skNegotiate, skIntimidate, skExplorer, jobName FROM Job ORDER BY jobType;"))
+                //Should the form be restructured this will provide all jobs and their level for all skills
+
+                //output the header
+                /*StreamWriter skillPerJobList = new StreamWriter(@"skill_per_job_list.csv");
+                skillPerJobList.WriteLine("Job Type:Rank:Pistols:Rifles:Blades:Evasion:Tactics:Stealth:Gunnery:Pilot:Ship Ops:Repair:Electronics:Navigation:Doctor:Command:Negotiate:Intimidate:Explore:Job");
+                //iterate over filtered collection of rows, output text
+                foreach (var skillPerJob in db.Load<Job>("SELECT jobType, jobLevel, skLightFirearms, skHeavyFirearms, skMelee, skEvasion, skTactics, " +
+                    "skStealth, skGunnery, skPilot, skShipOps, skRepair, skElectronics, skNavigation, skDoctor, skCommand, skNegotiate, skIntimidate, skExplorer, jobName FROM Job ORDER BY jobType;"))
+                {
+                    skillPerJobList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}",
+                        skillPerJob.jobType, skillPerJob.jobLevel, skillPerJob.skLightFirearms, skillPerJob.skHeavyFirearms, skillPerJob.skMelee, skillPerJob.skEvasion,
+                        skillPerJob.skTactics, skillPerJob.skStealth, skillPerJob.skGunnery, skillPerJob.skPilot, skillPerJob.skShipOps, skillPerJob.skRepair, skillPerJob.skElectronics,
+                        skillPerJob.skNavigation, skillPerJob.skDoctor, skillPerJob.skCommand, skillPerJob.skNegotiate, skillPerJob.skIntimidate, skillPerJob.skExplorer, skillPerJob.jobName);
+                }*/
+
+            //Given the structure of the form any new jobs will need to be entered manually. 
+            //To do this the SELECT statement should simply be SELECT * FROM Job WHERE jobType = "the jobType number of the new job"
+            //You will then need to specify the 3 skills the job contains. Should the job only have 2 skills the third will be "Null" with a given value of "0".
+            //Not how I wanted to handle this but the rewriting of the form would have been a much larger task than deemed necessary at the time.
+            //This foreach will iterate over the filtered collection of rows and output text.
+            foreach (var crewDog in db.Load<Job>("SELECT * FROM Job WHERE jobType = 1;"))
             {
-                skillPerJobList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}",
-                    skillPerJob.jobType, skillPerJob.jobLevel, skillPerJob.skLightFirearms, skillPerJob.skHeavyFirearms, skillPerJob.skMelee, skillPerJob.skEvasion,
-                    skillPerJob.skTactics, skillPerJob.skStealth, skillPerJob.skGunnery, skillPerJob.skPilot, skillPerJob.skShipOps, skillPerJob.skRepair, skillPerJob.skElectronics,
-                    skillPerJob.skNavigation, skillPerJob.skDoctor, skillPerJob.skCommand, skillPerJob.skNegotiate, skillPerJob.skIntimidate, skillPerJob.skExplorer, skillPerJob.jobName);
+                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Gunnery:{2}:Repair:{3}:{4}",
+                    crewDog.jobLevel, crewDog.skShipOps, crewDog.skGunnery, crewDog.skRepair, crewDog.jobName);
             }
+
+            foreach (var mechanic in db.Load<Job>("SELECT * FROM Job WHERE jobType = 2;"))
+            {
+                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Repair:{2}:Electronics:{3}:{4}",
+                    mechanic.jobLevel, mechanic.skShipOps, mechanic.skRepair, mechanic.skElectronics, mechanic.jobName);
+            }
+
+            foreach (var electronicsTech in db.Load<Job>("SELECT * FROM Job WHERE jobType = 3;"))
+            {
+                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Gunnery:{2}:Electronics:{3}:{4}",
+                    electronicsTech.jobLevel, electronicsTech.skShipOps, electronicsTech.skGunnery, electronicsTech.skElectronics, electronicsTech.jobName);
+            }
+
+            foreach (var gunner in db.Load<Job>("SELECT * FROM Job WHERE jobType = 4;"))
+            {
+                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Gunnery:{2}:Null:{3}",
+                    gunner.jobLevel, gunner.skShipOps, gunner.skGunnery, gunner.jobName);
+            }
+
+            foreach (var soldier in db.Load<Job>("SELECT * FROM Job WHERE jobType = 5;"))
+            {
+                skillPerJobList.WriteLine("{0}:Rifles:{1}:Evasion:{2}:Null:0:{3}",
+                    soldier.jobLevel, soldier.skHeavyFirearms, soldier.skEvasion, soldier.jobName);
+            }
+
+            foreach (var pistoleer in db.Load<Job>("SELECT * FROM Job WHERE jobType = 6;"))
+            {
+                skillPerJobList.WriteLine("{0}:Pistols:{1}:Evasion:{2}:Null:0:{3}",
+                    pistoleer.jobLevel, pistoleer.skLightFirearms, pistoleer.skEvasion, pistoleer.jobName);
+            }
+
+            foreach (var sniper in db.Load<Job>("SELECT * FROM Job WHERE jobType = 7;"))
+            {
+                skillPerJobList.WriteLine("{0}:Rifles:{1}:Evasion:{2}:Stealth:{3}:{4}",
+                    sniper.jobLevel, sniper.skHeavyFirearms, sniper.skEvasion, sniper.skStealth, sniper.jobName);
+            }
+
+            foreach (var swordsman in db.Load<Job>("SELECT * FROM Job WHERE jobType = 8;"))
+            {
+                skillPerJobList.WriteLine("{0}:Blades:{1}:Evasion:{2}:Null:0:{3}",
+                    swordsman.jobLevel, swordsman.skMelee, swordsman.skEvasion, swordsman.jobName);
+            }
+
+            foreach (var assassin in db.Load<Job>("SELECT * FROM Job WHERE jobType = 10;"))
+            {
+                skillPerJobList.WriteLine("{0}:Blades:{1}:Evasion:{2}:Stealth:{3}:{4}",
+                    assassin.jobLevel, assassin.skMelee, assassin.skEvasion, assassin.skStealth, assassin.jobName);
+            }
+
+            foreach (var combatMedic in db.Load<Job>("SELECT * FROM Job WHERE jobType = 11;"))
+            {
+                skillPerJobList.WriteLine("{0}:Pistols:{1}:Doctor:{2}:Null:0:{3}",
+                    combatMedic.jobLevel, combatMedic.skLightFirearms, combatMedic.skDoctor, combatMedic.jobName);
+            }
+
+            foreach (var doctor in db.Load<Job>("SELECT * FROM Job WHERE jobType = 12;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Doctor:{2}:Command:{3}:{4}",
+                    doctor.jobLevel, doctor.skTactics, doctor.skDoctor, doctor.skCommand, doctor.jobName);
+            }
+
+            foreach (var diplomat in db.Load<Job>("SELECT * FROM Job WHERE jobType = 13;"))
+            {
+                skillPerJobList.WriteLine("{0}:Negotiate:{1}:Intimidate:{2}:Null:0:{3}",
+                    diplomat.jobLevel, diplomat.skNegotiate, diplomat.skIntimidate, diplomat.jobName);
+            }
+
+            foreach (var zealot in db.Load<Job>("SELECT * FROM Job WHERE jobType = 15;"))
+            {
+                skillPerJobList.WriteLine("{0}:Blades:{1}:Intimidate:{2}:Command:{3}:{4}",
+                    zealot.jobLevel, zealot.skMelee, zealot.skIntimidate, zealot.skCommand, zealot.jobName);
+            }
+
+            foreach (var hyperwarpNavigator in db.Load<Job>("SELECT * FROM Job WHERE jobType = 16;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Navigator:{2}:Null:0:{3}",
+                    hyperwarpNavigator.jobLevel, hyperwarpNavigator.skTactics, hyperwarpNavigator.skNavigation, hyperwarpNavigator.jobName);
+            }
+
+            foreach (var wingTech in db.Load<Job>("SELECT * FROM Job WHERE jobType = 17;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Ship Ops:{2}:Repair:{3}:{4}",
+                    wingTech.jobLevel, wingTech.skTactics, wingTech.skShipOps, wingTech.skRepair, wingTech.jobName);
+            }
+
+            foreach (var exoScout in db.Load<Job>("SELECT * FROM Job WHERE jobType = 18;"))
+            {
+                skillPerJobList.WriteLine("{0}:Rifles:{1}:Explore:{2}:Null:0:{3}",
+                    exoScout.jobLevel, exoScout.skHeavyFirearms, exoScout.skExplorer, exoScout.jobName);
+            }
+
+            foreach (var scavenger in db.Load<Job>("SELECT * FROM Job WHERE jobType = 19;"))
+            {
+                skillPerJobList.WriteLine("{0}:Repair:{1}:Doctor:{2}:Explore:{3}:{4}",
+                    scavenger.jobLevel, scavenger.skRepair, scavenger.skDoctor, scavenger.skExplorer, scavenger.jobName);
+            }
+
+            foreach (var xenoHunter in db.Load<Job>("SELECT * FROM Job WHERE jobType = 20;"))
+            {
+                skillPerJobList.WriteLine("{0}:Rifles:{1}:Intimidate:{2}:Explore:{3}:{4}",
+                    xenoHunter.jobLevel, xenoHunter.skHeavyFirearms, xenoHunter.skIntimidate, xenoHunter.skExplorer, xenoHunter.jobName);
+            }
+
+            foreach (var commander in db.Load<Job>("SELECT * FROM Job WHERE jobType = 23;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Intimidate:{2}:Command:{3}:{4}",
+                    commander.jobLevel, commander.skTactics, commander.skIntimidate, commander.skCommand, commander.jobName);
+            }
+
+            foreach (var pilot in db.Load<Job>("SELECT * FROM Job WHERE jobType = 24;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Pilot:{2}:Navigator:{3}:{4}",
+                    pilot.jobLevel, pilot.skTactics, pilot.skPilot, pilot.skNavigation, pilot.jobName);
+            }
+
+            foreach (var wingCommando in db.Load<Job>("SELECT * FROM Job WHERE jobType = 25;"))
+            {
+                skillPerJobList.WriteLine("{0}:Blades:{1}:Pilot:{2}:Evasion:{3}:{4}",
+                   wingCommando.jobLevel, wingCommando.skMelee, wingCommando.skPilot, wingCommando.skEvasion, wingCommando.jobName);
+            }
+
+            foreach (var merchant in db.Load<Job>("SELECT * FROM Job WHERE jobType = 26;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Command:{2}:Negotiate:{3}:{4}",
+                    merchant.jobLevel, merchant.skTactics, merchant.skCommand, merchant.skNegotiate, merchant.jobName);
+            }
+
+            foreach (var smuggler in db.Load<Job>("SELECT * FROM Job WHERE jobType = 27;"))
+            {
+                skillPerJobList.WriteLine("{0}:Stealth:{1}:Negotiate:{2}:Intimidate:{3}:{4}",
+                    smuggler.jobLevel, smuggler.skStealth, smuggler.skNegotiate, smuggler.skIntimidate, smuggler.jobName);
+            }
+
+            foreach (var pirate in db.Load<Job>("SELECT * FROM Job WHERE jobType = 28;"))
+            {
+                skillPerJobList.WriteLine("{0}:Gunnery:{1}:Pilot:{2}:Intimidate:{3}:{4}",
+                    pirate.jobLevel, pirate.skGunnery, pirate.skPilot, pirate.skIntimidate, pirate.jobName);
+            }
+
+            foreach (var bountyHunter in db.Load<Job>("SELECT * FROM Job WHERE jobType = 29;"))
+            {
+                skillPerJobList.WriteLine("{0}:Rifles:{1}:Evasion:{2}:Intimidate:{3}:{4}",
+                    bountyHunter.jobLevel, bountyHunter.skHeavyFirearms, bountyHunter.skEvasion, bountyHunter.skIntimidate, bountyHunter.jobName);
+            }
+
+            foreach (var militaryOfficer in db.Load<Job>("SELECT * FROM Job WHERE jobType = 30;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Pistols:{2}:Command:{3}:{4}",
+                    militaryOfficer.jobLevel, militaryOfficer.skTactics, militaryOfficer.skLightFirearms, militaryOfficer.skCommand, militaryOfficer.jobName);
+            }
+
+            foreach (var explorer in db.Load<Job>("SELECT * FROM Job WHERE jobType = 31;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Electronics:{2}:Explore:{3}:{4}",
+                    explorer.jobLevel, explorer.skTactics, explorer.skElectronics, explorer.skExplorer, explorer.jobName);
+            }
+
+            foreach (var spy in db.Load<Job>("SELECT * FROM Job WHERE jobType = 32;"))
+            {
+                skillPerJobList.WriteLine("{0}:Pistols:{1}:Stealth:{2}:Electronics:{3}:{4}",
+                    spy.jobLevel, spy.skLightFirearms, spy.skStealth, spy.skElectronics, spy.jobName);
+            }
+
+            foreach (var engineer in db.Load<Job>("SELECT * FROM Job WHERE jobType = 33;"))
+            {
+                skillPerJobList.WriteLine("{0}:Repair:{1}:Electronics:{2}:Null:0:{3}",
+                    engineer.jobLevel, engineer.skRepair, engineer.skElectronics, engineer.jobName);
+            }
+
+            foreach (var quartermaster in db.Load<Job>("SELECT * FROM Job WHERE jobType = 34;"))
+            {
+                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Command:{2}:Intimidate:{3}:{4}",
+                    quartermaster.jobLevel, quartermaster.skShipOps, quartermaster.skCommand, quartermaster.skIntimidate, quartermaster.jobName);
+            }
+
+            foreach (var wingBomber in db.Load<Job>("SELECT * FROM Job WHERE jobType = 35;"))
+            {
+                skillPerJobList.WriteLine("{0}:Tactics:{1}:Pilot:{2}:Electronics:{3}:{4}",
+                    wingBomber.jobLevel, wingBomber.skTactics, wingBomber.skPilot, wingBomber.skElectronics, wingBomber.jobName);
+            }
+
+            foreach (var wingLeader in db.Load<Job>("SELECT * FROM Job WHERE jobType = 36;"))
+            {
+                skillPerJobList.WriteLine("{0}:Gunnery:{1}:Pilot:{2}:Electronics:{3}:{4}",
+                    wingLeader.jobLevel, wingLeader.skGunnery, wingLeader.skPilot, wingLeader.skElectronics, wingLeader.jobName);
+            }
+
             skillPerJobList.Close();
         }
 
@@ -281,12 +483,12 @@ namespace STF_SQLExportToolsToPlanner
                 case 12:
                 case 13:
                 case 50:
-                    return "YES";
+                    return "Yes";
                 default:
                     break;
             }
 
-            return "NO";
+            return "No";
         }
     }
 
@@ -345,7 +547,6 @@ namespace STF_SQLExportToolsToPlanner
         public int holdsPrisoner { get; set; }
         public int holdsCraft { get; set; }
         public int medicalRating { get; set; }
-
     }
 
     public class ShipEngine

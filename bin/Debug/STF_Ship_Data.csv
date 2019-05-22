@@ -1,1 +1,51 @@
-Ship:Current Mass:Max Mass:Price:Total Slots:Large:Mid:Small:Hull:Armour:Shield:Max Officers:Max Crew:Cargo:Engine:Speed:Agility:Fuel Cost:Fuel Tank:Fuel Range:Jump Cost:Pilot:Navigation:Ship Ops:Electronics:Gunnery:Tier
+Ship:Max Mass:Price:Small Slots:Medium Slots:Large Slots:Hull Points:Base Armor:Base Deflection:Max Officers:Max Life Support:Max Craft:Base Fuel
+Juror Class:3400:160000:10:3:2:1100:10:10:4:24:1:55
+Paladin Cruiser:5000:260000:10:5:4:1500:8:7:5:30:2:40
+Fidelis Cutter:6000:375000:12:7:4:2000:7:8:5:30:3:60
+Scout Cutter:2400:190000:11:3:2:900:12:12:4:24:0:60
+Cautela Heavylift:7000:575000:12:8:4:2500:5:4:6:36:3:80
+Dragoon Cruiser:7000:580000:12:7:4:2350:5:4:6:36:3:90
+Frontier Liner:5000:260000:10:5:3:1400:7:8:5:30:2:55
+Guardian Interceptor:6000:375000:12:7:4:1950:6:6:5:30:3:60
+Broadsword Class:8000:850000:13:9:7:2600:5:3:7:42:4:60
+Galtak Freighter:5000:260000:12:3:4:1600:8:5:5:30:2:30
+Lightbow Raptor:3400:230000:9:5:2:1200:12:10:4:24:1:25
+Longbow Cruiser:5000:350000:11:6:4:1500:9:8:5:30:2:25
+Raptor Class:6000:485000:11:8:4:1600:2:10:6:36:3:80
+Solar Predator:5000:340000:11:5:4:1950:7:9:5:30:2:80
+Vengeance Class:6000:500000:13:6:5:2350:8:3:6:36:3:45
+Warhammer Class:8000:1050000:12:11:7:2500:3:9:7:42:4:35
+Dart Jammer:3400:185000:11:3:2:1000:15:8:5:30:1:45
+Stellar Falcon:6000:500000:13:6:4:2050:5:9:5:30:3:75
+Hammerhead Jammer:5000:325000:10:5:4:2000:8:5:5:30:2:50
+Sword Battlecruiser:9000:1275000:14:12:6:2100:9:7:7:42:5:115
+Cautela Titan:9000:1300000:12:12:6:2700:7:4:7:42:5:160
+Strikecruiser:3400:375000:10:4:3:1250:12:10:4:24:1:75
+Paladin Defender:5000:340000:10:5:4:1500:12:6:5:30:2:30
+Callus Freighter:3400:356000:11:4:3:1500:5:12:5:30:1:50
+Vrax Hauler:5000:340000:10:7:4:1000:12:9:5:30:2:100
+Paladin Cutter:5000:320000:12:5:4:1600:7:11:5:30:2:40
+Vulture Liner:3400:325000:11:3:2:1000:8:12:4:24:1:85
+Allistar Liner:2400:340000:10:3:2:1000:10:14:4:24:0:95
+Bolt Raptor:3400:435000:12:4:2:1050:11:12:5:24:1:80
+Dart Liner:3400:368000:12:3:2:950:10:15:5:24:1:45
+Volk Frigate:2400:320000:11:3:2:1350:6:12:5:24:0:45
+Galtak Heavylift:5000:345000:11:5:5:1500:7:7:5:30:2:50
+Aeternum Vindex:2400:370000:10:4:2:1000:14:10:5:24:0:70
+Zartar Fang:2400:535000:9:6:2:1250:8:8:5:24:0:50
+Palace Interceptor:3400:315000:8:6:2:1200:11:11:5:24:1:70
+Corsair Interceptor:3400:325000:12:3:2:1100:10:10:5:24:1:55
+Sword Cutter:3400:800000:11:6:2:1900:7:8:5:30:1:70
+Wolf Vector:3400:625000:11:6:2:1700:10:6:5:30:1:100
+Royale Gladius:5000:400000:12:5:4:1100:10:10:5:30:2:55
+Strikecarrier:5000:620000:12:5:4:1350:8:12:5:30:3:60
+Reach Cruiser:5000:750000:11:6:4:1650:12:8:5:30:2:75
+Arcanum Freighter:5000:780000:12:5:4:1600:9:8:5:30:2:50
+Crimson Defender:6000:665000:12:7:4:1900:9:5:6:36:3:65
+Horizon Highliner:6000:800000:10:8:5:2495:4:9:6:30:3:40
+Tiberian Highliner:7000:795000:13:7:6:2200:6:5:6:42:3:120
+Degla Megalift:7000:595000:12:9:5:1900:7:9:7:36:3:75
+Aegis Freighter:8000:950000:8:13:7:2200:9:7:7:36:4:50
+Fallen Carrier:6000:800000:8:9:4:1850:4:7:7:36:4:130
+Basalt Carrier:7000:1050000:12:8:6:1850:4:7:7:36:4:130
+Harbinger Carrier:8000:1100000:12:10:6:2100:7:11:7:42:5:95
