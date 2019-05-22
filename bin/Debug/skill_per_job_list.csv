@@ -95,38 +95,38 @@ Rank:1-Name:1-Num:2-Name:2-Num:3-Name:3-Num:Job
 30:Ship Ops:10:Gunnery:8:Electronics:21:Electronics Tech
 31:Ship Ops:10:Gunnery:8:Electronics:22:Electronics Tech
 32:Ship Ops:11:Gunnery:9:Electronics:22:Electronics Tech
-1:Ship Ops:2:Gunnery:4:Null:Gunner
-2:Ship Ops:2:Gunnery:4:Null:Gunner
-3:Ship Ops:2:Gunnery:5:Null:Gunner
-4:Ship Ops:2:Gunnery:5:Null:Gunner
-5:Ship Ops:2:Gunnery:6:Null:Gunner
-6:Ship Ops:2:Gunnery:7:Null:Gunner
-7:Ship Ops:2:Gunnery:8:Null:Gunner
-8:Ship Ops:3:Gunnery:8:Null:Gunner
-9:Ship Ops:3:Gunnery:9:Null:Gunner
-10:Ship Ops:3:Gunnery:10:Null:Gunner
-11:Ship Ops:3:Gunnery:11:Null:Gunner
-12:Ship Ops:3:Gunnery:12:Null:Gunner
-13:Ship Ops:3:Gunnery:12:Null:Gunner
-14:Ship Ops:3:Gunnery:13:Null:Gunner
-15:Ship Ops:4:Gunnery:14:Null:Gunner
-16:Ship Ops:4:Gunnery:14:Null:Gunner
-17:Ship Ops:4:Gunnery:15:Null:Gunner
-18:Ship Ops:4:Gunnery:16:Null:Gunner
-19:Ship Ops:4:Gunnery:17:Null:Gunner
-20:Ship Ops:4:Gunnery:17:Null:Gunner
-21:Ship Ops:4:Gunnery:18:Null:Gunner
-22:Ship Ops:4:Gunnery:19:Null:Gunner
-23:Ship Ops:4:Gunnery:20:Null:Gunner
-24:Ship Ops:5:Gunnery:20:Null:Gunner
-25:Ship Ops:5:Gunnery:20:Null:Gunner
-26:Ship Ops:5:Gunnery:21:Null:Gunner
-27:Ship Ops:5:Gunnery:22:Null:Gunner
-28:Ship Ops:5:Gunnery:23:Null:Gunner
-29:Ship Ops:5:Gunnery:24:Null:Gunner
-30:Ship Ops:6:Gunnery:25:Null:Gunner
-31:Ship Ops:6:Gunnery:26:Null:Gunner
-32:Ship Ops:6:Gunnery:27:Null:Gunner
+1:Ship Ops:2:Gunnery:4:Null:0:Gunner
+2:Ship Ops:2:Gunnery:4:Null:0:Gunner
+3:Ship Ops:2:Gunnery:5:Null:0:Gunner
+4:Ship Ops:2:Gunnery:5:Null:0:Gunner
+5:Ship Ops:2:Gunnery:6:Null:0:Gunner
+6:Ship Ops:2:Gunnery:7:Null:0:Gunner
+7:Ship Ops:2:Gunnery:8:Null:0:Gunner
+8:Ship Ops:3:Gunnery:8:Null:0:Gunner
+9:Ship Ops:3:Gunnery:9:Null:0:Gunner
+10:Ship Ops:3:Gunnery:10:Null:0:Gunner
+11:Ship Ops:3:Gunnery:11:Null:0:Gunner
+12:Ship Ops:3:Gunnery:12:Null:0:Gunner
+13:Ship Ops:3:Gunnery:12:Null:0:Gunner
+14:Ship Ops:3:Gunnery:13:Null:0:Gunner
+15:Ship Ops:4:Gunnery:14:Null:0:Gunner
+16:Ship Ops:4:Gunnery:14:Null:0:Gunner
+17:Ship Ops:4:Gunnery:15:Null:0:Gunner
+18:Ship Ops:4:Gunnery:16:Null:0:Gunner
+19:Ship Ops:4:Gunnery:17:Null:0:Gunner
+20:Ship Ops:4:Gunnery:17:Null:0:Gunner
+21:Ship Ops:4:Gunnery:18:Null:0:Gunner
+22:Ship Ops:4:Gunnery:19:Null:0:Gunner
+23:Ship Ops:4:Gunnery:20:Null:0:Gunner
+24:Ship Ops:5:Gunnery:20:Null:0:Gunner
+25:Ship Ops:5:Gunnery:20:Null:0:Gunner
+26:Ship Ops:5:Gunnery:21:Null:0:Gunner
+27:Ship Ops:5:Gunnery:22:Null:0:Gunner
+28:Ship Ops:5:Gunnery:23:Null:0:Gunner
+29:Ship Ops:5:Gunnery:24:Null:0:Gunner
+30:Ship Ops:6:Gunnery:25:Null:0:Gunner
+31:Ship Ops:6:Gunnery:26:Null:0:Gunner
+32:Ship Ops:6:Gunnery:27:Null:0:Gunner
 1:Rifles:3:Evasion:1:Null:0:Soldier
 2:Rifles:4:Evasion:3:Null:0:Soldier
 3:Rifles:5:Evasion:3:Null:0:Soldier

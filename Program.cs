@@ -275,7 +275,7 @@ namespace STF_SQLExportToolsToPlanner
 
             foreach (var gunner in db.Load<Job>("SELECT * FROM Job WHERE jobType = 4;"))
             {
-                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Gunnery:{2}:Null:{3}",
+                skillPerJobList.WriteLine("{0}:Ship Ops:{1}:Gunnery:{2}:Null:0:{3}",
                     gunner.jobLevel, gunner.skShipOps, gunner.skGunnery, gunner.jobName);
             }
 
