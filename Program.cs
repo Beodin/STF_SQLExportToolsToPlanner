@@ -32,6 +32,15 @@ namespace STF_SQLExportToolsToPlanner
             }
         }
 
+        public static string removeColon(string str)
+        {
+            for(int i = 0; i < str.Length; i++)
+            {
+                str = str.Replace(":", "");
+            }
+            return str;
+        }
+
         public static string AddQuotes(string str)
         {
             return string.Format("\"{0}\"", str);
@@ -80,6 +89,46 @@ namespace STF_SQLExportToolsToPlanner
             }
 
             talentPoints.Close();
+        }
+
+        public static string weaponTypeToSting(int weapType)
+        {
+            //Takes the numeric value of weaponType and converts to string name of type
+            switch (weapType)
+            {
+                case 1:
+                    return "Autocannon";
+                case 2:
+                    return "Lance";
+                case 3:
+                    return "Plasma Cannon";
+                case 4:
+                    return "Railgun";
+                case 5:
+                    return "Grav Driver";
+                case 6:
+                    return "Missiles";
+                case 7:
+                    return "Torps";
+                default:
+                    return "";
+            }
+        }
+
+        public static string componentSizeToString(int compSize)
+        {
+            //Takes the numeric value of componentSize and converts to string of Small, Medium and Large
+            switch (compSize)
+            {
+                case 1:
+                    return "Small";
+                case 2:
+                    return "Medium";
+                case 3:
+                    return "Large";
+                default:
+                    return "";
+            }
         }
 
         public static string jobTypeToString(int jType)
@@ -245,7 +294,7 @@ namespace STF_SQLExportToolsToPlanner
             foreach(var shipWeap in db.Load<ShipWeapon>("SELECT * FROM ShipWeapon WHERE weaponName NOT LIKE 'X%' AND weaponName NOT LIKE 'NON%'; "))
             {
                 shipWeaponList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}",
-                    shipWeap.weaponName, shipWeap.weaponType, shipWeap.damage, shipWeap.radDamage, 
+                    shipWeap.weaponName, weaponTypeToSting(shipWeap.weaponType), shipWeap.damage, shipWeap.radDamage, 
                     shipWeap.voidDamage, shipWeap.range, shipWeap.ap, shipWeap.accuracy, 
                     shipWeap.critChance, shipWeap.effectChance, shipWeap.level);
             }
@@ -289,18 +338,17 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter shipComp = new StreamWriter(@"ship components.csv");
-            shipComp.WriteLine("Name:Type:Size:Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo:Max Crew:Max Officer:Jump Cost:Armor:Fuel Bonus:Guest:Prison:Max Crafts:Medical");
+            shipComp.WriteLine("Name:Size:Current Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo:Max Crew:Max Officers:Jump Cost:Armour:Fuel Tank:Guest:Prison:Max Crafts:Medical:Shield");
 
             //iterate over filtered collection of rows, output text
             //uses WHERE componentType > -1 to limit to player components
-            foreach (var shipComponent in db.Load<ShipComponent>("SELECT componentName, componentType, componentSize, mass, skPilot, skShipOps, skGunnery, skElectronics, skNavigation, skExplorer, holdsCargo, " +
-                "holdsCrew, holdsOfficer, jumpCost, armorBonus, fuelBonus, holdsGuest, holdsPrisoner, holdsCraft, medicalRating FROM ShipComponent WHERE componentType > -1 ORDER BY componentType;"))
+            foreach (var shipComponent in db.Load<ShipComponent>("SELECT * FROM ShipComponent ORDER BY componentType;"))
             {
                 shipComp.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}", 
-                    AddQuotes(shipComponent.componentName), shipComponent.componentType, shipComponent.componentSize, shipComponent.mass, 
+                    removeColon(shipComponent.componentName), componentSizeToString(shipComponent.componentSize), shipComponent.mass, 
                     shipComponent.skPilot, shipComponent.skShipOps, shipComponent.skGunnery, shipComponent.skElectronics, shipComponent.skNavigation, 
                     shipComponent.skExplorer, shipComponent.holdsCargo, shipComponent.holdsCrew, shipComponent.holdsOfficer, shipComponent.jumpCost, 
-                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner, shipComponent.holdsCraft, shipComponent.medicalRating);
+                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner, shipComponent.holdsCraft, shipComponent.medicalRating, shipComponent.deflectionBonus);
             }
             shipComp.Close();
         }
@@ -623,6 +671,7 @@ namespace STF_SQLExportToolsToPlanner
         public int holdsPrisoner { get; set; }
         public int holdsCraft { get; set; }
         public int medicalRating { get; set; }
+        public int deflectionBonus { get; set; }
     }
 
     public class ShipEngine
