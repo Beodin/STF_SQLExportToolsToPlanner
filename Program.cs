@@ -29,6 +29,7 @@ namespace STF_SQLExportToolsToPlanner
                 MakeFile_TalentList(db);
                 MakeFile_ShipWeaponData(db);
                 MakeFile_SmallCraftList(db);
+                MakeFile_ShipDefaultList(db);
             }
         }
 
@@ -44,6 +45,19 @@ namespace STF_SQLExportToolsToPlanner
         public static string AddQuotes(string str)
         {
             return string.Format("\"{0}\"", str);
+        }
+
+        private static void MakeFile_ShipDefaultList(SqlNado.SQLiteDatabase db)
+        {
+            // header
+            StreamWriter shipDefault = new StreamWriter(@"STF_Ship_Default_Comp.csv");
+            shipDefault.WriteLine("Ship:Component");
+
+            foreach (var sDefault in db.Load<ShipDefault>("SELECT ShipType.shipTypeName, ShipComponent.componentName FROM ShipDataCompartment INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent; "))
+            {
+                shipDefault.WriteLine("{0}:{1}", sDefault.shipTypeName, removeColon(sDefault.componentName));
+            }
+            shipDefault.Close();
         }
 
         private static void MakeFile_SmallCraftList(SqlNado.SQLiteDatabase db)
@@ -67,12 +81,21 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter shipData = new StreamWriter(@"STF_Ship_Data.csv");
-            shipData.WriteLine("Ship:Max Mass:Price:Small Slots:Medium Slots:Large Slots:Hull Points:Base Armor:Base Deflection:Max Officers:Max Life Support:Max Craft:Base Fuel");
+            shipData.WriteLine("Ship:Current Mass:Max Mass:Price:Total Slots:Large:Mid:Small:Hull:Armour:Shield:Max Officers:Max Crew:Cargo:Engine:Speed:Agility:Fuel Cost:Fuel Tank:Fuel Range:Jump Cost:Pilot:Navigation:Ship Ops:Electronics:Gunnery:Tier");
 
-            foreach (var shipType in db.Load<ShipType>("SELECT * FROM ShipType;"))
+            for (int i = 1; i < 100; i++)
             {
-                shipData.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}",
-                shipType.shipTypeName, shipType.baseMass, shipType.shipCost, shipType.smallSlots, shipType.mediumSlots, shipType.largeSlots, shipType.hullPoints, shipType.baseArmor, shipType.baseDeflection, shipType.maxOfficer, shipType.maxLifeSupport, shipType.maxCraft, shipType.baseFuel);
+                foreach (var shipType in db.Load<ShipType>(@"SELECT shipTypeName, sum(mass) AS currentMass, baseMass, shipCost, (smallSlots + mediumSlots + largeSlots) AS totalSlots, largeSlots, mediumSlots, smallSlots, hullPoints, (baseArmor + armorBonus) AS Armor, (baseDeflection + deflectionBonus) AS Deflection, maxOfficer, maxLifeSupport, sum(holdsCargo) as holdsCargo, sum(shipEngineId) as shipEngine , sum(shipSpeed) as shipSpeed, sum(shipAgile) as shipAagile, sum(mapFuelCost) as mapFuelCost, (sum(fuelBonus)+ baseFuel) AS fuelTank, (sum(fuelBonus)+ baseFuel)/sum(mapFuelCost) AS fuelRange, sum(jumpCost) AS jumpCost, sum(skPilot) AS pilot, sum(skNavigation) AS navigation, sum(skShipOps) AS shipOps, sum(skElectronics) AS electronics, sum(skGunnery) AS gunnery FROM ShipDataCompartment INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent LEFT JOIN ShipEngine ON ShipEngine._id = ShipComponent.shipEngineId WHERE ShipType._id = " + i + ";"))
+                {
+                    foreach (var subShip in db.Load<ShipType>(@"SELECT * FROM ShipDataCompartment INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId WHERE ShipComponent.componentType = 3 AND ShipType._id = " + i + ";"))
+                    {
+                        if (shipType.shipTypeName != null)
+                        {
+                            shipData.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}:{20}:{21}:{22}:{23}:{24}:{25}:{26}",
+                            shipType.shipTypeName, shipType.currentMass, shipType.baseMass, shipType.shipCost, shipType.totalSlots, shipType.largeSlots, shipType.mediumSlots, shipType.smallSlots, shipType.hullPoints, shipType.Armor, shipType.Deflection, shipType.maxOfficer, shipType.maxLifeSupport, shipType.holdsCargo, removeColon(subShip.componentName), shipType.shipSpeed, shipType.shipAgile, shipType.mapFuelCost, shipType.fuelTank, shipType.fuelRange, shipType.jumpCost, shipType.pilot, shipType.navigation, shipType.shipOps, shipType.electronics, shipType.gunnery, shipType.tier);
+                        }
+                    }
+                }            
             }
             shipData.Close();
         }
@@ -89,6 +112,460 @@ namespace STF_SQLExportToolsToPlanner
             }
 
             talentPoints.Close();
+        }
+
+        public static string actionCondensed(string str)
+        {
+            switch (str)
+            {
+                case "GAME_ACTION_TEST_SHIP_OPS":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_PILOT":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_ELECTRONICS":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_NAVIGATION":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_TACTICS":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_REPAIR":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_COMMAND":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_DOCTOR":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_INTIMIDATE":
+                    return "SKILL SAVE";
+                case "AME_ACTION_MISSION_CREATE":
+                    return "MISSION";
+                case "GAME_ACTION_MISSION_SEGMENT":
+                    return "MISSION";
+                case "GAME_ACTION_MISSION_SEGMENT_EDICT":
+                    return "MISSION";
+                case "GAME_ACTION_MISSION_COMPLETE":
+                    return "MISSION";
+                case "GAME_ACTION_CREW_RECRUIT":
+                    return "RECRUIT";
+                case "GAME_ACTION_LOW_MORALE":
+                    return "";
+                case "GAME_ACTION_PLANET_ARRIVE":
+                    return "AT PORT";
+                case "GAME_ACTION_PLANET_DEPART":
+                    return "";
+                case "GAME_ACTION_PLANET_NEW":
+                    return "";
+                case "GAME_ACTION_SPICE":
+                    return "SPICE";
+                case "GAME_ACTION_XENO_ENCOUNTER":
+                    return "XENO";
+                case "GAME_ACTION_RADIATION_STORM":
+                    return "STORM";
+                case "GAME_ACTION_CREW_PAY":
+                    return "PAY";
+                case "GAME_ACTION_COMBAT_CREW_KILL":
+                    return "";
+                case "GAME_ACTION_COMBAT_SHIP_KILL":
+                    return "";
+                case "GAME_ACTION_TEST_NEGOTIATE":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_STEALTH":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_TEST_EXPLORER":
+                    return "SKILL SAVE";
+                case "GAME_ACTION_COMBAT_CREW_START":
+                    return "";
+                case "GAME_ACTION_COMBAT_SHIP_START":
+                    return "";
+                case "GAME_ACTION_COMBAT_CREW_INIT":
+                    return "ON INIT";
+                case "GAME_ACTION_COMBAT_SHIP_INIT":
+                    return "";
+                case "GAME_ACTION_CONTACT_BUY_RANK":
+                    return "RANK";
+                case "GAME_ACTION_CONTACT_BUY_PERMIT":
+                    return "PERMIT";
+                case "GAME_ACTION_CONTACT_BUY_EDICT":
+                    return "EDICT";
+                case "GAME_ACTION_CONTACT_INTERACT":
+                    return "";
+                case "GAME_ACTION_HYPERWARP":
+                    return "JUMP";
+                case "GAME_ACTION_TRADE_BIG":
+                    return "TRADE";
+                case "GAME_ACTION_TRADE_BIG_100K":
+                    return "TRADE";
+                case "GAME_ACTION_TRADE_INTO_CONFLICT":
+                    return "TRADE";
+                case "GAME_ACTION_CREW_COMBAT_VICTORY_BOARDING_ACTIVE":
+                    return "BOARDING";
+                case "GAME_ACTION_CONTACT_INTRODUCE":
+                    return "INTRODUCTION";
+                case "GAME_ACTION_TRADE_BIG_ARTIFACT":
+                    return "ARTIFACTS";
+                case "GAME_ACTION_TRADE_BIG_BLACK":
+                    return "SMUGGLE";
+                case "GAME_ACTION_TRADE_BIG_BLACK_100K":
+                    return "SMUGGLE";
+                case "GAME_ACTION_ORBIT":
+                    return "ORBIT";
+                case "GAME_ACTION_CREW_XENO_ENCOUNTER":
+                    return "XENO";
+                case "GAME_ACTION_CREW_ABANDON":
+                    return "DESERTER";
+                case "GAME_ACTION_CREW_MUTINY":
+                    return "MUTINY";
+                case "GAME_ACTION_STARPORT_REPAIR":
+                    return "REPAIR";
+                case "GAME_ACTION_STARPORT_UPGRADE":
+                    return "UPGRADE";
+                case "GAME_ACTION_STARPORT_NEWSHIP":
+                    return "NEW SHIP";
+                case "GAME_ACTION_ORBIT_METEOR":
+                    return "METEOR";
+                case "GAME_ACTION_PLANET_ARRIVE_WILD":
+                    return "WILD";
+                case "GAME_ACTION_TRAIT_MUTATE":
+                    return "";
+                case "GAME_ACTION_CREW_DEATH_HEALTH":
+                    return "ON DEATH";
+                case "GAME_ACTION_CREW_DEATH_MORALE":
+                    return "";
+                case "GAME_ACTION_EXPLORER_ACTIVE":
+                    return "EXPLORE";
+                case "GAME_ACTION_EXPLORER_PASSIVE":
+                    return "EXPLORE";
+                case "GAME_ACTION_SPY_ACTIVE":
+                    return "SPY";
+                case "GAME_ACTION_SPY_PASSIVE":
+                    return "SPY";
+                case "GAME_ACTION_PATROL_ACTIVE":
+                    return "PATROL";
+                case "GAME_ACTION_PATROL_PASSIVE":
+                    return "PATROL";
+                case "GAME_ACTION_BLOCKADE_ACTIVE":
+                    return "BLOCKADE";
+                case "GAME_ACTION_BLOCKADE_PASSIVE":
+                    return "BLOCKADE";
+                case "GAME_ACTION_NON_IMPL":
+                    return "";
+                case "GAME_ACTION_SHIP_ESCAPE":
+                    return "ESCAPE";
+                case "GAME_ACTION_MORALE_CHANGE":
+                    return "";
+                case "GAME_ACTION_XP_CHANGE":
+                    return "";
+                case "GAME_ACTION_PLANET_LANDING":
+                    return "LANDING";
+                case "GAME_ACTION_SHIP_COMBAT_DRAW":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_DEFEAT_SEARCHED":
+                    return "SEARCHED";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_CAPTURE_ACTIVE":
+                    return "VICTORY";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_DESTROY_ACTIVE":
+                    return "DESTROY";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_CAPTURE_SMUGGLER_ACTIVE":
+                    return "VICTORY";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_CAPTURE_MILITARY_ACTIVE":
+                    return "VICTORY";
+                case "GAME_ACTION_SHIP_COMBAT_PREAMBLE_ACTIVE":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_PREAMBLE_MILITARY_ACTIVE":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_PREAMBLE_PIRATE_ACTIVE":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_PREAMBLE_HUNTER_ACTIVE":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_PREAMBLE_MERCHANT_ACTIVE":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_SALVAGE":
+                    return "SALVAGE";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_DESTROY":
+                    return "DESTROY";
+                case "GAME_ACTION_CREW_COMBAT_VICTORY_ACTIVE":
+                    return "VICTORY";
+                case "GAME_ACTION_MARKET_OPS_ACTIVE":
+                    return "SMUGGLE";
+                case "GAME_ACTION_MARKET_OPS_PASSIVE":
+                    return "SMUGGLE";
+                case "GAME_ACTION_CREW_DOCTOR":
+                    return "DOCTOR";
+                case "GAME_ACTION_CONTACT_SELL_DATA":
+                    return "INTEL";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_GLOBAL":
+                    return "VICTORY";
+                case "GAME_ACTION_TRADE_UNIQUE":
+                    return "RTG";
+                case "GAME_ACTION_SALVAGE_ACTIVE":
+                    return "SALVAGE";
+                case "GAME_ACTION_SALVAGE_PASSIVE":
+                    return "SALVAGE";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_CONFLICT_ACTIVE":
+                    return "VICTORY";
+                case "GAME_ACTION_SHIP_COMBAT_PREAMBLE_SMUGGLER_ACTIVE":
+                    return "ENCOUNTER";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_XENO":
+                    return "VICTORY";
+                case "GAME_ACTION_SHIP_COMBAT_VICTORY_SALVAGE_XENO":
+                    return "VICTORY";
+                case "GAME_ACTION_SHIP_COMBAT_CRAFT_LANDED":
+                    return "CRAFT LANDS";
+                case "GAME_ACTION_SHIP_COMBAT_CRAFT_DESTROYED":
+                    return "CRAFT DEATH";
+                case "GAME_ACTION_STARPORT_CRAFT_PURCHASE":
+                    return "NEW CRAFT";
+                case "GAME_ACTION_SHIP_COMBAT_CRAFT_MAINT_POINT":
+                    return "MAINT POINT";
+                case "GAME_ACTION_SHIP_COMBAT_CRAFT_PLAN":
+                    return "";
+                case "GAME_ACTION_COMBAT_CREW_ACTIVE":
+                    return "";
+                case "GAME_ACTION_COMBAT_SHIP_ACTIVE":
+                    return "";
+                case "GAME_ACTION_CONFLICT_SCORE":
+                    return "CONFLICT";
+                default:
+                    return "";
+            }
+        }
+
+        public static string actionTypeToString(string aType)
+        {
+            switch (aType)
+            {
+                case "1":
+                    return "GAME_ACTION_TEST_SHIP_OPS";
+                case "2":
+                    return "GAME_ACTION_TEST_PILOT";
+                case "3":
+                    return "GAME_ACTION_TEST_ELECTRONICS";
+                case "4":
+                    return "GAME_ACTION_TEST_NAVIGATION";
+                case "5":
+                    return "GAME_ACTION_TEST_TACTICS";
+                case "6":
+                    return "GAME_ACTION_TEST_REPAIR";
+                case "7":
+                    return "GAME_ACTION_TEST_COMMAND";
+                case "8":
+                    return "GAME_ACTION_TEST_DOCTOR";
+                case "9":
+                    return "GAME_ACTION_TEST_INTIMIDATE";
+                case "10":
+                    return "GAME_ACTION_MISSION_CREATE";
+                case "11":
+                    return "GAME_ACTION_MISSION_SEGMENT";
+                case "12":
+                    return "GAME_ACTION_MISSION_COMPLETE";
+                case "13":
+                    return "GAME_ACTION_CREW_RECRUIT";
+                case "14":
+                    return "GAME_ACTION_LOW_MORALE";
+                case "15":
+                    return "GAME_ACTION_PLANET_ARRIVE";
+                case "16":
+                    return "GAME_ACTION_PLANET_DEPART";
+                case "17":
+                    return "GAME_ACTION_PLANET_NEW";
+                case "18":
+                    return "GAME_ACTION_SPICE";
+                case "19":
+                    return "GAME_ACTION_XENO_ENCOUNTER";
+                case "20":
+                    return "GAME_ACTION_RADIATION_STORM";
+                case "21":
+                    return "GAME_ACTION_CREW_PAY";
+                case "22":
+                    return "GAME_ACTION_COMBAT_CREW_KILL";
+                case "23":
+                    return "GAME_ACTION_COMBAT_SHIP_KILL";
+                case "24":
+                    return "GAME_ACTION_TEST_NEGOTIATE";
+                case "25":
+                    return "GAME_ACTION_TEST_STEALTH";
+                case "26":
+                    return "GAME_ACTION_TEST_EXPLORER";
+                case "27":
+                    return "GAME_ACTION_COMBAT_CREW_START";
+                case "28":
+                    return "GAME_ACTION_COMBAT_SHIP_START";
+                case "29":
+                    return "GAME_ACTION_COMBAT_CREW_INIT";
+                case "30":
+                    return "GAME_ACTION_COMBAT_SHIP_INIT";
+                case "31":
+                    return "GAME_ACTION_CONTACT_BUY_RANK";
+                case "32":
+                    return "GAME_ACTION_CONTACT_BUY_PERMIT";
+                case "33":
+                    return "GAME_ACTION_CONTACT_BUY_EDICT";
+                case "34":
+                    return "GAME_ACTION_CONTACT_INTERACT";
+                case "35":
+                    return "GAME_ACTION_HYPERWARP";
+                case "36":
+                    return "GAME_ACTION_TRADE_BIG";
+                case "37":
+                    return "GAME_ACTION_TRADE_BIG_ARTIFACT";
+                case "38":
+                    return "GAME_ACTION_TRADE_BIG_BLACK";
+                case "39":
+                    return "GAME_ACTION_ORBIT";
+                case "40":
+                    return "GAME_ACTION_CREW_XENO_ENCOUNTER";
+                case "41":
+                    return "GAME_ACTION_CREW_ABANDON";
+                case "42":
+                    return "GAME_ACTION_CREW_MUTINY";
+                case "43":
+                    return "GAME_ACTION_STARPORT_REPAIR";
+                case "44":
+                    return "GAME_ACTION_STARPORT_UPGRADE";
+                case "45":
+                    return "GAME_ACTION_STARPORT_NEWSHIP";
+                case "46":
+                    return "GAME_ACTION_ORBIT_METEOR";
+                case "47":
+                    return "GAME_ACTION_PLANET_ARRIVE_WILD";
+                case "48":
+                    return "GAME_ACTION_TRAIT_MUTATE";
+                case "49":
+                    return "GAME_ACTION_CREW_DEATH_HEALTH";
+                case "50":
+                    return "GAME_ACTION_CREW_DEATH_MORALE";
+                case "51":
+                    return "GAME_ACTION_EXPLORER_ACTIVE";
+                case "52":
+                    return "GAME_ACTION_EXPLORER_PASSIVE";
+                case "53":
+                    return "GAME_ACTION_SPY_ACTIVE";
+                case "54":
+                    return "GAME_ACTION_SPY_PASSIVE";
+                case "55":
+                    return "GAME_ACTION_PATROL_ACTIVE";
+                case "56":
+                    return "GAME_ACTION_PATROL_PASSIVE";
+                case "57":
+                    return "GAME_ACTION_BLOCKADE_ACTIVE";
+                case "58":
+                    return "GAME_ACTION_BLOCKADE_PASSIVE";
+                case "59":
+                    return "GAME_ACTION_NON_IMPL";
+                case "60":
+                    return "GAME_ACTION_SHIP_ESCAPE";
+                case "61":
+                    return "GAME_ACTION_MORALE_CHANGE";
+                case "62":
+                    return "GAME_ACTION_XP_CHANGE";
+                case "63":
+                    return "GAME_ACTION_PLANET_LANDING";
+                case "64":
+                    return "GAME_ACTION_SHIP_COMBAT_DRAW";
+                case "65":
+                    return "GAME_ACTION_SHIP_COMBAT_DEFEAT_SEARCHED";
+                case "66":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_CAPTURE_ACTIVE";
+                case "67":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_DESTROY_ACTIVE";
+                case "68":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_CAPTURE_SMUGGLER_ACTIVE";
+                case "69":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_CAPTURE_MILITARY_ACTIVE";
+                case "70":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_ACTIVE";
+                case "71":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_MILITARY_ACTIVE";
+                case "72":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_PIRATE_ACTIVE";
+                case "73":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_HUNTER_ACTIVE";
+                case "74":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_MERCHANT_ACTIVE";
+                case "75":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_SALVAGE";
+                case "76":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_DESTROY";
+                case "77":
+                    return "GAME_ACTION_CREW_COMBAT_VICTORY_BOARDING_ACTIVE";
+                case "78":
+                    return "GAME_ACTION_CREW_COMBAT_VICTORY_ACTIVE";
+                case "79":
+                    return "GAME_ACTION_MARKET_OPS_ACTIVE";
+                case "80":
+                    return "GAME_ACTION_MARKET_OPS_PASSIVE";
+                case "81":
+                    return "GAME_ACTION_CREW_DOCTOR";
+                case "82":
+                    return "GAME_ACTION_CONTACT_SELL_DATA";
+                case "83":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_GLOBAL";
+                case "84":
+                    return "GAME_ACTION_SHIP_COMBAT_PRESS_CREW";
+                case "85":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_TRIBUTE";
+                case "86":
+                    return "GAME_ACTION_SHIP_COMBAT_END";
+                case "87":
+                    return "GAME_ACTION_SHIP_COMBAT_RANSOM";
+                case "88":
+                    return "GAME_ACTION_CONFLICT_SCORE";
+                case "89":
+                    return "GAME_ACTION_SHIP_COMBAT_DEFEAT";
+                case "90":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY";
+                case "91":
+                    return "GAME_ACTION_CONTACT_INTRODUCE";
+                case "92":
+                    return "GAME_ACTION_TRADE_UNIQUE";
+                case "93":
+                    return "GAME_ACTION_MISSION_SEGMENT_EDICT";
+                case "94":
+                    return "GAME_ACTION_TRADE_BIG_BLACK_100K";
+                case "95":
+                    return "GAME_ACTION_TRADE_BIG_100K";
+                case "96":
+                    return "GAME_ACTION_TRADE_INTO_CONFLICT";
+                case "97":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_CONFLICT_ACTIVE";
+                case "98":
+                    return "GAME_ACTION_TEST_EVASION";
+                case "99":
+                    return "GAME_ACTION_PLAGUE_TRAIT";
+                case "100":
+                    return "GAME_ACTION_PLAGUE_RUMOR";
+                case "101":
+                    return "GAME_ACTION_SALVAGE_ACTIVE";
+                case "102":
+                    return "GAME_ACTION_SALVAGE_PASSIVE";
+                case "103":
+                    return "GAME_ACTION_SHIP_COMBAT_PREAMBLE_SMUGGLER_ACTIVE";
+                case "104":
+                    return "GAME_ACTION_STASH_RAIDED";
+                case "105":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_XENO";
+                case "106":
+                    return "GAME_ACTION_SHIP_COMBAT_VICTORY_SALVAGE_XENO";
+                case "107":
+                    return "GAME_ACTION_SHIP_COMBAT_CRAFT_LAUNCHED";
+                case "108":
+                    return "GAME_ACTION_SHIP_COMBAT_CRAFT_LANDED";
+                case "109":
+                    return "GAME_ACTION_SHIP_COMBAT_CRAFT_DESTROYED";
+                case "110":
+                    return "GAME_ACTION_STARPORT_CRAFT_REPAIR";
+                case "111":
+                    return "GAME_ACTION_STARPORT_CRAFT_PURCHASE";
+                case "112":
+                    return "GAME_ACTION_SHIP_COMBAT_CRAFT_MAINT_POINT";
+                case "113":
+                    return "GAME_ACTION_SHIP_COMBAT_CRAFT_PLAN";
+                case "-1":
+                    return "GAME_ACTION_COMBAT_CREW_ACTIVE";
+                case "-2":
+                    return "GAME_ACTION_COMBAT_SHIP_ACTIVE";
+                default:
+                    return "";
+            }
         }
 
         public static string weaponTypeToSting(int weapType)
@@ -291,7 +768,7 @@ namespace STF_SQLExportToolsToPlanner
             shipWeaponList.WriteLine("Name:Type:Damage:Radiation:Void:Range:AP:Accuracy:Critical Chance:Cripple Chance:Level");
 
             //iterate over filtered collection of rows, output text
-            foreach(var shipWeap in db.Load<ShipWeapon>("SELECT * FROM ShipWeapon WHERE weaponName NOT LIKE 'X%' AND weaponName NOT LIKE 'NON%'; "))
+            foreach(var shipWeap in db.Load<ShipWeapon>("SELECT * FROM ShipWeapon;"))
             {
                 shipWeaponList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}",
                     shipWeap.weaponName, weaponTypeToSting(shipWeap.weaponType), shipWeap.damage, shipWeap.radDamage, 
@@ -312,7 +789,7 @@ namespace STF_SQLExportToolsToPlanner
             {
                 talentList.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}",
                     talent.talentName, talent.jobLevel, talent.talentName2, talent.cooldown, 
-                    jobTypeToString(talent.jobType), talent.actionType);
+                    jobTypeToString(talent.jobType), actionCondensed(actionTypeToString(talent.actionType)));
             }
             talentList.Close();
         }
@@ -324,11 +801,11 @@ namespace STF_SQLExportToolsToPlanner
             shipEngine.WriteLine("Name:Mass:Speed:Agility:Fuel Cost:Combat Cost:Safety:Range Cost");
 
             //iterate over filtered collection of rows, output text
-            //uses NOT LIKE 'X%' to limit to player components
-            foreach (var engine in db.Load<ShipEngine>("SELECT * FROM ShipEngine WHERE name NOT LIKE 'X%';"))
+            
+            foreach (var engine in db.Load<ShipEngine>("SELECT * FROM ShipEngine INNER JOIN ShipComponent ON ShipComponent.shipEngineId = ShipEngine._id;"))
             {
                 shipEngine.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}", 
-                    engine.name, engine.designMass, engine.shipSpeed, engine.shipAgile, 
+                    removeColon(engine.componentName), engine.designMass, engine.shipSpeed, engine.shipAgile, 
                     engine.mapFuelCost, engine.combatFuelCost, engine.safetyRating, engine.moveCost);
             }
             shipEngine.Close();
@@ -338,17 +815,17 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter shipComp = new StreamWriter(@"ship components.csv");
-            shipComp.WriteLine("Name:Size:Current Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Explorer:Cargo:Max Crew:Max Officers:Jump Cost:Armour:Fuel Tank:Guest:Prison:Max Crafts:Medical:Shield");
+            shipComp.WriteLine("Name:Size:Current Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Cargo:Max Crew:Max Officers:Jump Cost:Armour:Fuel Tank:Guest:Prison:Medical:Shield:Max Crafts:Explore");
 
             //iterate over filtered collection of rows, output text
-            //uses WHERE componentType > -1 to limit to player components
+            
             foreach (var shipComponent in db.Load<ShipComponent>("SELECT * FROM ShipComponent ORDER BY componentType;"))
             {
                 shipComp.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}", 
                     removeColon(shipComponent.componentName), componentSizeToString(shipComponent.componentSize), shipComponent.mass, 
                     shipComponent.skPilot, shipComponent.skShipOps, shipComponent.skGunnery, shipComponent.skElectronics, shipComponent.skNavigation, 
-                    shipComponent.skExplorer, shipComponent.holdsCargo, shipComponent.holdsCrew, shipComponent.holdsOfficer, shipComponent.jumpCost, 
-                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner, shipComponent.holdsCraft, shipComponent.medicalRating, shipComponent.deflectionBonus);
+                    shipComponent.holdsCargo, shipComponent.holdsCrew, shipComponent.holdsOfficer, shipComponent.jumpCost, 
+                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner,  shipComponent.medicalRating, shipComponent.deflectionBonus, shipComponent.holdsCraft, shipComponent.skExplorer);
             }
             shipComp.Close();
         }
@@ -686,6 +1163,7 @@ namespace STF_SQLExportToolsToPlanner
         public int combatFuelCost { get; set; }
         public int safetyRating { get; set; }
         public int moveCost { get; set; }
+        public string componentName { get; set; }
     }
     
     public class Talent
@@ -736,12 +1214,28 @@ namespace STF_SQLExportToolsToPlanner
         public int mediumSlots { get; set; }
         public int largeSlots { get; set; }
         public int hullPoints { get; set; }
-        public int baseArmor { get; set; }
-        public int baseDeflection { get; set; }
+        public int Armor { get; set; }
+        public int Deflection { get; set; }
         public int maxOfficer { get; set; }
         public int maxLifeSupport { get; set; }
         public int maxCraft { get; set; }
         public int baseFuel { get; set; }
+        public int currentMass { get; set; }
+        public int totalSlots { get; set; }
+        public int holdsCargo { get; set; }
+        public string componentName { get; set; }
+        public int shipSpeed { get; set; }
+        public int shipAgile { get; set; }
+        public int mapFuelCost { get; set; }
+        public int fuelTank { get; set; }
+        public int fuelRange { get; set; }
+        public int jumpCost { get; set; }
+        public int pilot { get; set; }
+        public int navigation { get; set; }
+        public int shipOps { get; set; }
+        public int electronics { get; set; }
+        public int gunnery { get; set; }
+        public int tier { get; set; }
     }
 
     public class SmallCraft
@@ -768,5 +1262,13 @@ namespace STF_SQLExportToolsToPlanner
         public int baseToHitShip { get; set; }
         public int baseToHitCraft { get; set; }
         public int baseToDodgeHit { get; set; }
+    }
+
+    public class ShipDefault
+    {
+        [SQLiteColumn(IsPrimaryKey = true)]
+        public int _id { get; set; }
+        public string shipTypeName { get; set; }
+        public string componentName { get; set; }
     }
 }
