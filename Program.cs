@@ -85,14 +85,22 @@ namespace STF_SQLExportToolsToPlanner
 
             for (int i = 1; i < 100; i++)
             {
-                foreach (var shipType in db.Load<ShipType>(@"SELECT shipTypeName, sum(mass) AS currentMass, baseMass, shipCost, (smallSlots + mediumSlots + largeSlots) AS totalSlots, largeSlots, mediumSlots, smallSlots, hullPoints, (baseArmor + armorBonus) AS Armor, (baseDeflection + deflectionBonus) AS Deflection, maxOfficer, maxLifeSupport, sum(holdsCargo) as holdsCargo, sum(shipEngineId) as shipEngine , sum(shipSpeed) as shipSpeed, sum(shipAgile) as shipAagile, sum(mapFuelCost) as mapFuelCost, (sum(fuelBonus)+ baseFuel) AS fuelTank, (sum(fuelBonus)+ baseFuel)/sum(mapFuelCost) AS fuelRange, sum(jumpCost) AS jumpCost, sum(skPilot) AS pilot, sum(skNavigation) AS navigation, sum(skShipOps) AS shipOps, sum(skElectronics) AS electronics, sum(skGunnery) AS gunnery FROM ShipDataCompartment INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent LEFT JOIN ShipEngine ON ShipEngine._id = ShipComponent.shipEngineId WHERE ShipType._id = " + i + ";"))
+                foreach (var shipType in db.Load<ShipType>(@"SELECT shipTypeName, sum(mass) AS currentMass, baseMass, shipCost, (smallSlots + mediumSlots + largeSlots) AS totalSlots, 
+                    largeSlots, mediumSlots, smallSlots, hullPoints, (baseArmor + armorBonus) AS Armor, (baseDeflection + deflectionBonus) AS Deflection, maxOfficer, maxLifeSupport, 
+                    sum(holdsCargo) as holdsCargo, sum(shipEngineId) as shipEngine , sum(shipSpeed) as shipSpeed, sum(shipAgile) as Agility, sum(mapFuelCost) as mapFuelCost, 
+                    (sum(fuelBonus)+ baseFuel) AS fuelTank, (sum(fuelBonus)+ baseFuel)/sum(mapFuelCost) AS fuelRange, sum(jumpCost) AS jumpCost, sum(skPilot) AS pilot, sum(skNavigation) AS navigation, 
+                    sum(skShipOps) AS shipOps, sum(skElectronics) AS electronics, sum(skGunnery) AS gunnery FROM ShipDataCompartment INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId 
+                    INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent LEFT JOIN ShipEngine ON ShipEngine._id = ShipComponent.shipEngineId WHERE ShipType._id = " + i + ";"))
                 {
                     foreach (var subShip in db.Load<ShipType>(@"SELECT * FROM ShipDataCompartment INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId WHERE ShipComponent.componentType = 3 AND ShipType._id = " + i + ";"))
                     {
                         if (shipType.shipTypeName != null)
                         {
                             shipData.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}:{20}:{21}:{22}:{23}:{24}:{25}:{26}",
-                            shipType.shipTypeName, shipType.currentMass, shipType.baseMass, shipType.shipCost, shipType.totalSlots, shipType.largeSlots, shipType.mediumSlots, shipType.smallSlots, shipType.hullPoints, shipType.Armor, shipType.Deflection, shipType.maxOfficer, shipType.maxLifeSupport, shipType.holdsCargo, removeColon(subShip.componentName), shipType.shipSpeed, shipType.shipAgile, shipType.mapFuelCost, shipType.fuelTank, shipType.fuelRange, shipType.jumpCost, shipType.pilot, shipType.navigation, shipType.shipOps, shipType.electronics, shipType.gunnery, shipType.tier);
+                            shipType.shipTypeName, shipType.currentMass, shipType.baseMass, shipType.shipCost, shipType.totalSlots, shipType.largeSlots, shipType.mediumSlots, 
+                            shipType.smallSlots, shipType.hullPoints, shipType.Armor, shipType.Deflection, shipType.maxOfficer, shipType.maxLifeSupport, shipType.holdsCargo, 
+                            removeColon(subShip.componentName), shipType.shipSpeed, shipType.Agility, shipType.mapFuelCost, shipType.fuelTank, shipType.fuelRange, shipType.jumpCost, 
+                            shipType.pilot, shipType.navigation, shipType.shipOps, shipType.electronics, shipType.gunnery, shipType.tier);
                         }
                     }
                 }            
@@ -1225,7 +1233,7 @@ namespace STF_SQLExportToolsToPlanner
         public int holdsCargo { get; set; }
         public string componentName { get; set; }
         public int shipSpeed { get; set; }
-        public int shipAgile { get; set; }
+        public int Agility { get; set; }
         public int mapFuelCost { get; set; }
         public int fuelTank { get; set; }
         public int fuelRange { get; set; }
