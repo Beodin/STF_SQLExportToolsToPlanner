@@ -815,17 +815,17 @@ namespace STF_SQLExportToolsToPlanner
         {
             //output the header
             StreamWriter shipComp = new StreamWriter(@"ship components.csv");
-            shipComp.WriteLine("Name:Size:Current Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Cargo:Max Crew:Max Officers:Jump Cost:Armour:Fuel Tank:Guest:Prison:Medical:Shield:Max Crafts:Explore");
+            shipComp.WriteLine("Name:Size:Current Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Cargo:Max Crew:Max Officers:Jump Cost:Armour:Fuel Tank:Guest:Prison:Medical:Shield");
 
             //iterate over filtered collection of rows, output text
             
             foreach (var shipComponent in db.Load<ShipComponent>("SELECT * FROM ShipComponent ORDER BY componentType;"))
             {
-                shipComp.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}:{18}:{19}", 
+                shipComp.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}:{12}:{13}:{14}:{15}:{16}:{17}", 
                     removeColon(shipComponent.componentName), componentSizeToString(shipComponent.componentSize), shipComponent.mass, 
                     shipComponent.skPilot, shipComponent.skShipOps, shipComponent.skGunnery, shipComponent.skElectronics, shipComponent.skNavigation, 
                     shipComponent.holdsCargo, shipComponent.holdsCrew, shipComponent.holdsOfficer, shipComponent.jumpCost, 
-                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner,  shipComponent.medicalRating, shipComponent.deflectionBonus, shipComponent.holdsCraft, shipComponent.skExplorer);
+                    shipComponent.armorBonus, shipComponent.fuelBonus, shipComponent.holdsGuest, shipComponent.holdsPrisoner,  shipComponent.medicalRating, shipComponent.deflectionBonus);
             }
             shipComp.Close();
         }
