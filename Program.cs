@@ -50,7 +50,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_ShipDefaultList(SqlNado.SQLiteDatabase db)
         {
             // header
-            StreamWriter shipDefault = new StreamWriter(@"STF_Ship_Default_Comp.csv");
+            StreamWriter shipDefault = new StreamWriter("STF_Ship_Default_Comp.csv");
             shipDefault.WriteLine("Ship:Component");
 
             foreach (var sDefault in db.Load<ShipDefault>("SELECT ShipType.shipTypeName, ShipComponent.componentName FROM ShipDataCompartment INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent; "))
