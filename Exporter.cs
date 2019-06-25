@@ -10,12 +10,14 @@ using System.IO;
 
 namespace STF_SQLExportToolsToPlanner
 {
-    class Program
+    class Exporter
     {
 
         static void Main(string[] args)
         {
-
+            string folderName = @"c:\";
+            string pathString = Path.Combine(folderName, "STFPlannerFiles");
+            Directory.CreateDirectory(pathString);
             string path = "tools.db";
 
             using (var db = new SQLiteDatabase(path))
@@ -31,6 +33,7 @@ namespace STF_SQLExportToolsToPlanner
                 MakeFile_SmallCraftList(db);
                 MakeFile_ShipDefaultList(db);
             }
+            MakeFile_SkillList();
         }
 
         public static string removeColon(string str)
@@ -47,10 +50,17 @@ namespace STF_SQLExportToolsToPlanner
             return string.Format("\"{0}\"", str);
         }
 
+        private static void MakeFile_SkillList()
+        {
+            StreamWriter skillList = new StreamWriter(@"c:\STFPlannerFiles\skill_list.csv");
+            skillList.WriteLine("Skill\nBlades\nEvasion\nStealth\nRifles\nIntimidate\nPistols\nDoctor\nTactics\nCommand\nShip Ops\nGunnery\nRepair\nNegotiate\nElectronics\nExplore\nNavigation\nPilot");
+            skillList.Close();
+        }
+
         private static void MakeFile_ShipDefaultList(SqlNado.SQLiteDatabase db)
         {
             // header
-            StreamWriter shipDefault = new StreamWriter("STF_Ship_Default_Comp.csv");
+            StreamWriter shipDefault = new StreamWriter(@"c:\STFPlannerFiles\STF_Ship_Default_Comp.csv");
             shipDefault.WriteLine("Ship:Component");
 
             foreach (var sDefault in db.Load<ShipDefault>("SELECT ShipType.shipTypeName, ShipComponent.componentName FROM ShipDataCompartment INNER JOIN ShipType ON ShipType._id = ShipDataCompartment.shipId INNER JOIN ShipComponent ON ShipComponent._id = ShipDataCompartment.defaultComponent; "))
@@ -63,7 +73,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_SmallCraftList(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter smallCraft = new StreamWriter(@"smallCraft.csv");
+            StreamWriter smallCraft = new StreamWriter(@"c:\STFPlannerFiles\smallCraft.csv");
             smallCraft.WriteLine("Name:Description:Cost:Hull:Armor:Shields:Launch Fuel Cost:Pilot:Electronics:Gunnery:AP:Agile:Speed:Repair Cost:Chance to hit Ship:Chance to hit Craft:Dodge");
 
             foreach (var craft in db.Load<SmallCraft>("SELECT * FROM SmallCraft;"))
@@ -80,7 +90,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_ShipData(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter shipData = new StreamWriter(@"STF_Ship_Data.csv");
+            StreamWriter shipData = new StreamWriter(@"c:\STFPlannerFiles\STF_Ship_Data.csv");
             shipData.WriteLine("Ship:Current Mass:Max Mass:Price:Total Slots:Large:Mid:Small:Hull:Armour:Shield:Max Officers:Max Crew:Cargo:Engine:Speed:Agility:Fuel Cost:Fuel Tank:Fuel Range:Jump Cost:Pilot:Navigation:Ship Ops:Electronics:Gunnery:Tier");
 
             for (int i = 1; i < 100; i++)
@@ -111,7 +121,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_TalentPoints(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter talentPoints = new StreamWriter(@"talent_points.csv");
+            StreamWriter talentPoints = new StreamWriter(@"c:\STFPlannerFiles\talent_points.csv");
             talentPoints.WriteLine("Rank:Talents");
 
             foreach (var tPoint in db.Load<CharLevel>("SELECT * FROM CharacterLevel;"))
@@ -772,7 +782,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_ShipWeaponData(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter shipWeaponList = new StreamWriter(@"stf_weapon_data.csv");
+            StreamWriter shipWeaponList = new StreamWriter(@"c:\STFPlannerFiles\stf_weapon_data.csv");
             shipWeaponList.WriteLine("Name:Type:Damage:Radiation:Void:Range:AP:Accuracy:Critical Chance:Cripple Chance:Level");
 
             //iterate over filtered collection of rows, output text
@@ -789,7 +799,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_TalentList(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter talentList = new StreamWriter(@"stf_talent_job.csv");
+            StreamWriter talentList = new StreamWriter(@"c:\STFPlannerFiles\stf_talent_job.csv");
             talentList.WriteLine("Name:Rank:Description:Cooldown:Job:Type");
 
             //iterate over filtered collection of rows, output text
@@ -805,7 +815,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_StfEngineData(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter shipEngine = new StreamWriter(@"stf_engine_data.csv");
+            StreamWriter shipEngine = new StreamWriter(@"c:\STFPlannerFiles\stf_engine_data.csv");
             shipEngine.WriteLine("Name:Mass:Speed:Agility:Fuel Cost:Combat Cost:Safety:Range Cost");
 
             //iterate over filtered collection of rows, output text
@@ -822,7 +832,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_ShipComponents(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter shipComp = new StreamWriter(@"ship components.csv");
+            StreamWriter shipComp = new StreamWriter(@"c:\STFPlannerFiles\ship components.csv");
             shipComp.WriteLine("Name:Size:Current Mass:Pilot:Ship Ops:Gunnery:Electronics:Navigation:Cargo:Max Crew:Max Officers:Jump Cost:Armour:Fuel Tank:Guest:Prison:Medical:Shield");
 
             //iterate over filtered collection of rows, output text
@@ -841,7 +851,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_SkillPerJobList(SqlNado.SQLiteDatabase db)
         {
             //output the header
-            StreamWriter skillPerJobList = new StreamWriter(@"skill_per_job_list.csv");
+            StreamWriter skillPerJobList = new StreamWriter(@"c:\STFPlannerFiles\skill_per_job_list.csv");
             skillPerJobList.WriteLine("Rank:1-Name:1-Num:2-Name:2-Num:3-Name:3-Num:Job");
 
                 //Should the form be restructured this will provide all jobs and their level for all skills
@@ -1062,7 +1072,7 @@ namespace STF_SQLExportToolsToPlanner
         private static void MakeFile_JobList(SqlNado.SQLiteDatabase db)
         {
             // output the header
-            StreamWriter jobList = new StreamWriter(@"job_list.csv");
+            StreamWriter jobList = new StreamWriter(@"c:\STFPlannerFiles\job_list.csv");
             jobList.WriteLine("Job:Starter");
 
             // iterate over filtered collection of rows, output text
